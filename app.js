@@ -98,6 +98,12 @@ function nextStep() {
   }
 }
 
+function prevStep() {
+  if (currentStep > 0) {
+    showStep(currentStep - 1);
+  }
+}
+
 function handleOptionClick(option, stepIndex) {
   const value = option.dataset.value;
   if (!value) return;
@@ -148,6 +154,12 @@ function bindContinueButtons() {
   document.querySelectorAll('[data-action="continue"]').forEach((button) => {
     button.addEventListener('click', () => nextStep());
   });
+}
+
+function bindBackButton() {
+  const backButton = document.getElementById('backButton');
+  if (!backButton) return;
+  backButton.addEventListener('click', () => prevStep());
 }
 
 function bindSliders() {
@@ -292,6 +304,7 @@ function startTimer() {
 
 bindOptionClicks();
 bindContinueButtons();
+bindBackButton();
 bindSliders();
 startTimer();
 initProgressTrack();

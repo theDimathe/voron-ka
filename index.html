@@ -21,7 +21,10 @@
       <header class="topbar">
         <div class="logo">Get Honey AI</div>
         <div class="status">Premium</div>
-        <div class="progress-track" id="progressTrack" aria-hidden="true"></div>
+        <div class="progress-row">
+          <button class="back-button" id="backButton" type="button" aria-label="Go back">←</button>
+          <div class="progress-track" id="progressTrack" aria-hidden="true"></div>
+        </div>
       </header>
 
       <main class="wizard" id="wizard">
@@ -498,41 +501,59 @@
           <h2>Any specific preferences?</h2>
           <p class="subtitle">You can choose all that excites you</p>
           <div class="options grid three-column multi">
-            <button class="option has-media" data-value="Tattoos">
+            <button class="option has-media multi-option" data-value="Tattoos">
               <span class="option-media">
-                <img src="https://placehold.co/300x300?text=Tattoos" alt="Tattoos" />
+                <img src="https://placehold.co/180x280?text=Tattoos" alt="Tattoos" />
               </span>
-              <span class="option-label">Tattoos</span>
+              <span class="option-meta">
+                <span class="option-label">Tattoos</span>
+                <span class="option-check" aria-hidden="true"></span>
+              </span>
             </button>
-            <button class="option has-media" data-value="Freckles">
+            <button class="option has-media multi-option" data-value="Freckles">
               <span class="option-media">
-                <img src="https://placehold.co/300x300?text=Freckles" alt="Freckles" />
+                <img src="https://placehold.co/180x280?text=Freckles" alt="Freckles" />
               </span>
-              <span class="option-label">Freckles</span>
+              <span class="option-meta">
+                <span class="option-label">Freckles</span>
+                <span class="option-check" aria-hidden="true"></span>
+              </span>
             </button>
-            <button class="option has-media" data-value="High heels">
+            <button class="option has-media multi-option" data-value="High heels">
               <span class="option-media">
-                <img src="https://placehold.co/300x300?text=High+heels" alt="High heels" />
+                <img src="https://placehold.co/180x280?text=High+heels" alt="High heels" />
               </span>
-              <span class="option-label">High heels</span>
+              <span class="option-meta">
+                <span class="option-label">High heels</span>
+                <span class="option-check" aria-hidden="true"></span>
+              </span>
             </button>
-            <button class="option has-media" data-value="Makeup">
+            <button class="option has-media multi-option" data-value="Makeup">
               <span class="option-media">
-                <img src="https://placehold.co/300x300?text=Makeup" alt="Makeup" />
+                <img src="https://placehold.co/180x280?text=Makeup" alt="Makeup" />
               </span>
-              <span class="option-label">Makeup</span>
+              <span class="option-meta">
+                <span class="option-label">Makeup</span>
+                <span class="option-check" aria-hidden="true"></span>
+              </span>
             </button>
-            <button class="option has-media" data-value="Stockings">
+            <button class="option has-media multi-option" data-value="Stockings">
               <span class="option-media">
-                <img src="https://placehold.co/300x300?text=Stockings" alt="Stockings" />
+                <img src="https://placehold.co/180x280?text=Stockings" alt="Stockings" />
               </span>
-              <span class="option-label">Stockings</span>
+              <span class="option-meta">
+                <span class="option-label">Stockings</span>
+                <span class="option-check" aria-hidden="true"></span>
+              </span>
             </button>
-            <button class="option has-media" data-value="No makeup">
+            <button class="option has-media multi-option" data-value="No makeup">
               <span class="option-media">
-                <img src="https://placehold.co/300x300?text=No+makeup" alt="No makeup" />
+                <img src="https://placehold.co/180x280?text=No+makeup" alt="No makeup" />
               </span>
-              <span class="option-label">No makeup</span>
+              <span class="option-meta">
+                <span class="option-label">No makeup</span>
+                <span class="option-check" aria-hidden="true"></span>
+              </span>
             </button>
           </div>
           <button class="primary full" data-action="continue" disabled>Continue</button>
@@ -936,6 +957,6 @@
     </div>
 
     <script src="app.js"></script>
-    <div class="version-tag">voron ver. 0.2.0</div>
+    <div class="version-tag">voron ver. 0.2.1</div>
   </body>
 </html>
