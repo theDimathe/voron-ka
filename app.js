@@ -1,6 +1,29 @@
 const steps = Array.from(document.querySelectorAll('.step'));
 let currentStep = 0;
 
+const stepSlugs = [
+  'ethnicity',
+  'age',
+  'figure',
+  'breast-size',
+  'butt-size',
+  'hair',
+  'preferences',
+  'intro',
+  'looking-for',
+  'traits',
+  'try',
+  'scenarios',
+  'analysis-1',
+  'spicy-photos',
+  'analysis-2',
+  'voice-messages',
+  'analysis-3',
+  'special-videos',
+  'summary',
+  'pricing',
+];
+
 const state = {
   ethnicity: null,
   age: null,
@@ -37,11 +60,27 @@ const selectionsMap = {
   17: 'specialVideos',
 };
 
+function updateUrlForStep(index) {
+  const slug = stepSlugs[index] ?? `step-${index + 1}`;
+  const url = new URL(window.location.href);
+  url.searchParams.set('quizStep', slug);
+  window.history.replaceState({ quizStep: slug }, '', url.toString());
+}
+
+function getStepFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+  const slug = params.get('quizStep');
+  if (!slug) return 0;
+  const index = stepSlugs.indexOf(slug);
+  return index >= 0 ? index : 0;
+}
+
 function showStep(index) {
   steps.forEach((step, idx) => {
     step.classList.toggle('active', idx === index);
   });
   currentStep = index;
+  updateUrlForStep(index);
   if (analysisSteps.has(index)) {
     runProgressAnimation(index);
   }
@@ -71,12 +110,6 @@ function handleOptionClick(option, stepIndex) {
     }
     return;
   }
-
-  const step = steps[stepIndex];
-  if (step) {
-    step.querySelectorAll('.option').forEach((button) => button.classList.remove('selected'));
-  }
-  option.classList.add('selected');
 
   const key = selectionsMap[stepIndex];
   if (key) {
@@ -209,4 +242,4 @@ bindOptionClicks();
 bindContinueButtons();
 bindSliders();
 startTimer();
-showStep(0);
+showStep(getStepFromUrl());
