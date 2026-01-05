@@ -46,6 +46,7 @@ const state = {
 const multiSteps = new Set([6, 10, 11]);
 const autoAdvanceSteps = new Set([0, 1, 2, 3, 4, 5, 13, 15, 17]);
 const analysisSteps = new Set([12, 14, 16]);
+const selectionRequiredSteps = new Set([6, 8, 10, 11]);
 
 const selectionsMap = {
   0: 'ethnicity',
@@ -81,6 +82,8 @@ function showStep(index) {
   });
   currentStep = index;
   updateUrlForStep(index);
+  updateProgressTrack(index);
+  updateContinueState(index);
   if (analysisSteps.has(index)) {
     runProgressAnimation(index);
   }
@@ -99,6 +102,14 @@ function handleOptionClick(option, stepIndex) {
   const value = option.dataset.value;
   if (!value) return;
 
+  const step = steps[stepIndex];
+  const options = step.querySelectorAll('.option');
+  options.forEach((item) => {
+    if (item !== option && !multiSteps.has(stepIndex)) {
+      item.classList.remove('selected');
+    }
+  });
+
   if (multiSteps.has(stepIndex)) {
     option.classList.toggle('selected');
     const collectionKey = stepIndex === 6 ? 'preferences' : stepIndex === 10 ? 'willing' : 'scenarios';
@@ -108,6 +119,7 @@ function handleOptionClick(option, stepIndex) {
     } else {
       state[collectionKey] = list.filter((item) => item !== value);
     }
+    updateContinueState(stepIndex);
     return;
   }
 
@@ -115,6 +127,8 @@ function handleOptionClick(option, stepIndex) {
   if (key) {
     state[key] = value;
   }
+  option.classList.add('selected');
+  updateContinueState(stepIndex);
 
   if (autoAdvanceSteps.has(stepIndex)) {
     nextStep();
@@ -181,6 +195,44 @@ function runProgressAnimation(stepIndex) {
   }, 160);
 }
 
+function initProgressTrack() {
+  const track = document.getElementById('progressTrack');
+  if (!track) return;
+  track.innerHTML = '';
+  steps.forEach(() => {
+    const span = document.createElement('span');
+    track.appendChild(span);
+  });
+}
+
+function updateProgressTrack(index) {
+  const track = document.getElementById('progressTrack');
+  if (!track) return;
+  const segments = Array.from(track.children);
+  segments.forEach((segment, idx) => {
+    segment.classList.toggle('active', idx <= index);
+  });
+}
+
+function updateContinueState(stepIndex) {
+  if (!selectionRequiredSteps.has(stepIndex)) return;
+  const step = steps[stepIndex];
+  const button = step.querySelector('[data-action="continue"]');
+  if (!button) return;
+
+  let hasSelection = false;
+  if (stepIndex === 6) {
+    hasSelection = state.preferences.length > 0;
+  } else if (stepIndex === 8) {
+    hasSelection = Boolean(state.lookingFor);
+  } else if (stepIndex === 10) {
+    hasSelection = state.willing.length > 0;
+  } else if (stepIndex === 11) {
+    hasSelection = state.scenarios.length > 0;
+  }
+  button.disabled = !hasSelection;
+}
+
 function updateSummary() {
   const setText = (key, fallback) => {
     const target = document.querySelector(`[data-summary="${key}"]`);
@@ -242,4 +294,5 @@ bindOptionClicks();
 bindContinueButtons();
 bindSliders();
 startTimer();
+initProgressTrack();
 showStep(getStepFromUrl());

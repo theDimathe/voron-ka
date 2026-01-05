@@ -21,6 +21,7 @@
       <header class="topbar">
         <div class="logo">Get Honey AI</div>
         <div class="status">Premium</div>
+        <div class="progress-track" id="progressTrack" aria-hidden="true"></div>
       </header>
 
       <main class="wizard" id="wizard">
@@ -30,7 +31,7 @@
             <p>You will be able to talk to the girl of your dreams as well as 100s of other AI girls</p>
           </div>
           <h2>Select her ethnicity</h2>
-          <div class="options grid">
+          <div class="options grid two-column">
             <button class="option has-media" data-value="Caucasian">
               <span class="option-media">
                 <video
@@ -79,13 +80,13 @@
               </span>
               <span class="option-label">Black</span>
             </button>
-            <button class="option" data-value="Choose randomly">Choose randomly</button>
+            <button class="option option-full" data-value="Choose randomly">Choose randomly</button>
           </div>
         </section>
 
         <section class="step" data-step="1">
           <h2>How old would you like your AI Girlfriend to be?</h2>
-          <div class="options grid">
+          <div class="options grid two-column">
             <button class="option has-media" data-value="18">
               <span class="option-media">
                 <picture>
@@ -179,7 +180,7 @@
 
         <section class="step" data-step="2">
           <h2>What kind of figure do you prefer in women?</h2>
-          <div class="options grid">
+          <div class="options grid two-column">
             <button class="option has-media" data-value="Extra skinny">
               <span class="option-media">
                 <picture>
@@ -273,7 +274,7 @@
 
         <section class="step" data-step="3">
           <h2>Is there a certain breast size you find especially attractive?</h2>
-          <div class="options grid">
+          <div class="options grid two-column">
             <button class="option has-media" data-value="Small">
               <span class="option-media">
                 <picture>
@@ -315,7 +316,7 @@
 
         <section class="step" data-step="4">
           <h2>What kind of butt catches your eye the most?</h2>
-          <div class="options grid">
+          <div class="options grid two-column">
             <button class="option has-media" data-value="Small">
               <span class="option-media">
                 <picture>
@@ -357,7 +358,7 @@
 
         <section class="step" data-step="5">
           <h2>Which hair color do you find most attractive on a woman?</h2>
-          <div class="options grid">
+          <div class="options grid three-column">
             <button class="option has-media" data-value="Blonde">
               <span class="option-media">
                 <picture>
@@ -493,35 +494,83 @@
           </div>
         </section>
 
-        <section class="step" data-step="6">
+        <section class="step" data-step="6" data-requires-selection="true">
           <h2>Any specific preferences?</h2>
           <p class="subtitle">You can choose all that excites you</p>
-          <div class="options grid multi">
-            <button class="option" data-value="Tattoos">Tattoos</button>
-            <button class="option" data-value="Freckles">Freckles</button>
-            <button class="option" data-value="High heels">High heels</button>
-            <button class="option" data-value="Makeup">Makeup</button>
-            <button class="option" data-value="Stockings">Stockings</button>
-            <button class="option" data-value="No makeup">No makeup</button>
+          <div class="options grid three-column multi">
+            <button class="option has-media" data-value="Tattoos">
+              <span class="option-media">
+                <img src="https://placehold.co/300x300?text=Tattoos" alt="Tattoos" />
+              </span>
+              <span class="option-label">Tattoos</span>
+            </button>
+            <button class="option has-media" data-value="Freckles">
+              <span class="option-media">
+                <img src="https://placehold.co/300x300?text=Freckles" alt="Freckles" />
+              </span>
+              <span class="option-label">Freckles</span>
+            </button>
+            <button class="option has-media" data-value="High heels">
+              <span class="option-media">
+                <img src="https://placehold.co/300x300?text=High+heels" alt="High heels" />
+              </span>
+              <span class="option-label">High heels</span>
+            </button>
+            <button class="option has-media" data-value="Makeup">
+              <span class="option-media">
+                <img src="https://placehold.co/300x300?text=Makeup" alt="Makeup" />
+              </span>
+              <span class="option-label">Makeup</span>
+            </button>
+            <button class="option has-media" data-value="Stockings">
+              <span class="option-media">
+                <img src="https://placehold.co/300x300?text=Stockings" alt="Stockings" />
+              </span>
+              <span class="option-label">Stockings</span>
+            </button>
+            <button class="option has-media" data-value="No makeup">
+              <span class="option-media">
+                <img src="https://placehold.co/300x300?text=No+makeup" alt="No makeup" />
+              </span>
+              <span class="option-label">No makeup</span>
+            </button>
           </div>
-          <button class="primary" data-action="continue">Continue</button>
+          <button class="primary full" data-action="continue" disabled>Continue</button>
         </section>
 
         <section class="step" data-step="7">
-          <h2>Hey handsome, now let me match your freak</h2>
-          <button class="primary" data-action="continue">Continue</button>
+          <div class="centered">
+            <img class="intro-image" src="https://placehold.co/320x320?text=AI+Girl" alt="AI girl" />
+            <h2>Hey handsome, now let me match your freak</h2>
+            <button class="primary full" data-action="continue">Continue</button>
+          </div>
         </section>
 
-        <section class="step" data-step="8">
+        <section class="step" data-step="8" data-requires-selection="true">
           <h2>What are you looking for in your AI companion?</h2>
-          <div class="options grid">
-            <button class="option" data-value="Romantic roleplay">Romantic roleplay</button>
-            <button class="option" data-value="Friendship">Friendship</button>
-            <button class="option" data-value="Flirting and love">Flirting and love</button>
-            <button class="option" data-value="A safe, non-judgemental space">A safe, non-judgemental space</button>
-            <button class="option" data-value="Exploring AI capabilities">Exploring AI capabilities</button>
+          <div class="options grid list">
+            <button class="option list-option" data-value="Romantic roleplay">
+              <span class="icon">💞</span>
+              <span>Romantic roleplay</span>
+            </button>
+            <button class="option list-option" data-value="Friendship">
+              <span class="icon">🤝</span>
+              <span>Friendship</span>
+            </button>
+            <button class="option list-option" data-value="Flirting and love">
+              <span class="icon">💬</span>
+              <span>Flirting and love</span>
+            </button>
+            <button class="option list-option" data-value="A safe, non-judgemental space">
+              <span class="icon">🧘</span>
+              <span>A safe, non-judgemental space</span>
+            </button>
+            <button class="option list-option" data-value="Exploring AI capabilities">
+              <span class="icon">✨</span>
+              <span>Exploring AI capabilities</span>
+            </button>
           </div>
-          <button class="primary" data-action="continue">Continue</button>
+          <button class="primary full" data-action="continue" disabled>Continue</button>
         </section>
 
         <section class="step" data-step="9">
@@ -529,30 +578,39 @@
           <div class="sliders">
             <div class="slider">
               <div class="slider-row">
-                <span>Libido intensity</span>
+                <div class="slider-label">
+                  <span class="icon">🧭</span>
+                  <span>Libido intensity</span>
+                </div>
                 <span class="slider-value" data-slider-value="libido">50%</span>
               </div>
               <input type="range" min="0" max="100" value="50" data-slider="libido" />
             </div>
             <div class="slider">
               <div class="slider-row">
-                <span>Kink Openness</span>
+                <div class="slider-label">
+                  <span class="icon">👠</span>
+                  <span>Kink Openness</span>
+                </div>
                 <span class="slider-value" data-slider-value="kink">50%</span>
               </div>
               <input type="range" min="0" max="100" value="50" data-slider="kink" />
             </div>
             <div class="slider">
               <div class="slider-row">
-                <span>Comfort with Nudity</span>
+                <div class="slider-label">
+                  <span class="icon">🫦</span>
+                  <span>Comfort with Nudity</span>
+                </div>
                 <span class="slider-value" data-slider-value="nudity">50%</span>
               </div>
               <input type="range" min="0" max="100" value="50" data-slider="nudity" />
             </div>
           </div>
-          <button class="primary" data-action="continue">Continue</button>
+          <button class="primary full" data-action="continue">Continue</button>
         </section>
 
-        <section class="step" data-step="10">
+        <section class="step" data-step="10" data-requires-selection="true">
           <h2>What are you willing to try?</h2>
           <p class="subtitle">You can choose all that excites you</p>
           <div class="options grid multi">
@@ -562,10 +620,10 @@
             <button class="option" data-value="Roleplay">Roleplay</button>
             <button class="option" data-value="Age Gap">Age Gap</button>
           </div>
-          <button class="primary" data-action="continue">Continue</button>
+          <button class="primary full" data-action="continue" disabled>Continue</button>
         </section>
 
-        <section class="step" data-step="11">
+        <section class="step" data-step="11" data-requires-selection="true">
           <h2>Do you have any favorite scenarios?</h2>
           <p class="subtitle">You can choose all that excites you</p>
           <div class="options grid multi">
@@ -578,7 +636,7 @@
             <button class="option" data-value="Repairman & House Owner">Repairman & House Owner</button>
             <button class="option" data-value="Massage Therapist & Client">Massage Therapist & Client</button>
           </div>
-          <button class="primary" data-action="continue">Continue</button>
+          <button class="primary full" data-action="continue" disabled>Continue</button>
         </section>
 
         <section class="step" data-step="12">
@@ -878,6 +936,6 @@
     </div>
 
     <script src="app.js"></script>
-    <div class="version-tag">voron ver. 0.1.0</div>
+    <div class="version-tag">voron ver. 0.2.0</div>
   </body>
 </html>
