@@ -453,22 +453,106 @@ input[type="range"] {
   transition: width 0.3s ease;
 }
 
-.summary {
+.summary-hero {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 30px;
+  border: 2px solid var(--accent);
+}
+
+.summary-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  object-fit: cover;
+}
+
+.summary-subtitle {
+  margin: 8px 0 0;
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.summary-title {
+  font-size: 1.5rem;
+  margin: 8px 0 0;
+}
+
+.summary-card {
+  padding: 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.02);
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-.summary-block {
-  padding: 16px;
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 16px;
+.summary-label {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
 }
 
-.summary-block:hover,
+.summary-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.summary-tag {
+  padding: 8px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.03);
+  font-size: 0.95rem;
+}
+
+.summary-metrics {
+  display: grid;
+  gap: 18px;
+}
+
+.summary-metric {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.summary-meter {
+  margin-top: 6px;
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  border: 6px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.summary-extras {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+.summary-extra {
+  padding: 12px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.02);
+  text-align: center;
+  font-weight: 600;
+}
+
 .plan:hover,
 .discount:hover,
 .as-featured:hover,
@@ -477,21 +561,6 @@ input[type="range"] {
 .guarantee:hover {
   background: rgba(255, 255, 255, 0.03);
   color: inherit;
-}
-
-.summary-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  font-weight: 600;
-}
-
-.tag {
-  display: inline-flex;
-  padding: 8px 14px;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 999px;
-  font-size: 0.9rem;
 }
 
 .pricing {

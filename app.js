@@ -298,23 +298,32 @@ function updateSummary() {
     target.textContent = value;
   };
 
-  setText('lookingFor', 'Romantic roleplay');
-  setText('figure', 'Extra skinny');
-  setText('breast', 'Small');
-  setText('butt', 'Small');
-  setText('hair', 'Blonde');
   setText('libido', `${state.libido}%`);
   setText('kink', `${state.kink}%`);
   setText('nudity', `${state.nudity}%`);
 
-  const joinList = (key, fallback) => (state[key].length ? state[key].join(', ') : fallback);
+  const joinList = (key, fallback) => (state[key].length ? state[key] : fallback);
+  const tags = [
+    state.figure || 'Extra skinny',
+    state.breast || 'Small',
+    state.butt || 'Small',
+    state.hair || 'Blonde',
+    ...joinList('preferences', ['No makeup']),
+    state.lookingFor || 'Romantic roleplay',
+    ...joinList('willing', ['Backdoor action']),
+    ...joinList('scenarios', ['Doctor & Patient']),
+  ].filter(Boolean);
 
-  const preferences = document.querySelector('[data-summary="preferences"]');
-  if (preferences) preferences.textContent = joinList('preferences', 'Tattoos');
-  const willing = document.querySelector('[data-summary="willing"]');
-  if (willing) willing.textContent = joinList('willing', 'Threesome');
-  const scenarios = document.querySelector('[data-summary="scenarios"]');
-  if (scenarios) scenarios.textContent = joinList('scenarios', 'Doctor & Patient');
+  const tagsContainer = document.querySelector('[data-summary-tags="core"]');
+  if (tagsContainer) {
+    tagsContainer.innerHTML = '';
+    tags.forEach((item) => {
+      const tag = document.createElement('span');
+      tag.className = 'summary-tag';
+      tag.textContent = item;
+      tagsContainer.appendChild(tag);
+    });
+  }
 
   const extras = document.querySelector('[data-summary="extras"]');
   if (extras) {
@@ -326,7 +335,7 @@ function updateSummary() {
     ].filter(Boolean);
     (extrasList.length ? extrasList : ['Spicy photos', 'Voice messages', 'Special videos']).forEach((item) => {
       const tag = document.createElement('span');
-      tag.className = 'tag';
+      tag.className = 'summary-extra';
       tag.textContent = item;
       extras.appendChild(tag);
     });
