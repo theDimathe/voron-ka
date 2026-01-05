@@ -72,6 +72,12 @@ function handleOptionClick(option, stepIndex) {
     return;
   }
 
+  const step = steps[stepIndex];
+  if (step) {
+    step.querySelectorAll('.option').forEach((button) => button.classList.remove('selected'));
+  }
+  option.classList.add('selected');
+
   const key = selectionsMap[stepIndex];
   if (key) {
     state[key] = value;
