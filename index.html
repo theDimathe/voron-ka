@@ -22,7 +22,11 @@
         <div class="logo">Get Honey AI</div>
         <div class="status">Premium</div>
         <div class="progress-row">
-          <button class="back-button" id="backButton" type="button" aria-label="Go back">←</button>
+          <button class="back-button" id="backButton" type="button" aria-label="Go back">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M15.5 5.5 9 12l6.5 6.5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
           <div class="progress-track" id="progressTrack" aria-hidden="true"></div>
         </div>
       </header>
@@ -501,7 +505,7 @@
           <h2>Any specific preferences?</h2>
           <p class="subtitle">You can choose all that excites you</p>
           <div class="options grid three-column multi">
-            <button class="option has-media multi-option" data-value="Tattoos">
+            <button class="option has-media multi-option center-media" data-value="Tattoos">
               <span class="option-media">
                 <img src="https://placehold.co/180x280?text=Tattoos" alt="Tattoos" />
               </span>
@@ -510,7 +514,7 @@
                 <span class="option-check" aria-hidden="true"></span>
               </span>
             </button>
-            <button class="option has-media multi-option" data-value="Freckles">
+            <button class="option has-media multi-option center-media" data-value="Freckles">
               <span class="option-media">
                 <img src="https://placehold.co/180x280?text=Freckles" alt="Freckles" />
               </span>
@@ -519,7 +523,7 @@
                 <span class="option-check" aria-hidden="true"></span>
               </span>
             </button>
-            <button class="option has-media multi-option" data-value="High heels">
+            <button class="option has-media multi-option center-media" data-value="High heels">
               <span class="option-media">
                 <img src="https://placehold.co/180x280?text=High+heels" alt="High heels" />
               </span>
@@ -528,7 +532,7 @@
                 <span class="option-check" aria-hidden="true"></span>
               </span>
             </button>
-            <button class="option has-media multi-option" data-value="Makeup">
+            <button class="option has-media multi-option center-media" data-value="Makeup">
               <span class="option-media">
                 <img src="https://placehold.co/180x280?text=Makeup" alt="Makeup" />
               </span>
@@ -537,7 +541,7 @@
                 <span class="option-check" aria-hidden="true"></span>
               </span>
             </button>
-            <button class="option has-media multi-option" data-value="Stockings">
+            <button class="option has-media multi-option center-media" data-value="Stockings">
               <span class="option-media">
                 <img src="https://placehold.co/180x280?text=Stockings" alt="Stockings" />
               </span>
@@ -546,7 +550,7 @@
                 <span class="option-check" aria-hidden="true"></span>
               </span>
             </button>
-            <button class="option has-media multi-option" data-value="No makeup">
+            <button class="option has-media multi-option center-media" data-value="No makeup">
               <span class="option-media">
                 <img src="https://placehold.co/180x280?text=No+makeup" alt="No makeup" />
               </span>
@@ -635,11 +639,26 @@
           <h2>What are you willing to try?</h2>
           <p class="subtitle">You can choose all that excites you</p>
           <div class="options grid multi">
-            <button class="option" data-value="Threesome">Threesome</button>
-            <button class="option" data-value="Backdoor action">Backdoor action</button>
-            <button class="option" data-value="BDSM">BDSM</button>
-            <button class="option" data-value="Roleplay">Roleplay</button>
-            <button class="option" data-value="Age Gap">Age Gap</button>
+            <button class="option list-option multi-option" data-value="Threesome">
+              <span>Threesome</span>
+              <span class="option-check" aria-hidden="true"></span>
+            </button>
+            <button class="option list-option multi-option" data-value="Backdoor action">
+              <span>Backdoor action</span>
+              <span class="option-check" aria-hidden="true"></span>
+            </button>
+            <button class="option list-option multi-option" data-value="BDSM">
+              <span>BDSM</span>
+              <span class="option-check" aria-hidden="true"></span>
+            </button>
+            <button class="option list-option multi-option" data-value="Roleplay">
+              <span>Roleplay</span>
+              <span class="option-check" aria-hidden="true"></span>
+            </button>
+            <button class="option list-option multi-option" data-value="Age Gap">
+              <span>Age Gap</span>
+              <span class="option-check" aria-hidden="true"></span>
+            </button>
           </div>
           <button class="primary full" data-action="continue" disabled>Continue</button>
         </section>
@@ -648,14 +667,38 @@
           <h2>Do you have any favorite scenarios?</h2>
           <p class="subtitle">You can choose all that excites you</p>
           <div class="options grid multi">
-            <button class="option" data-value="Doctor & Patient">Doctor & Patient</button>
-            <button class="option" data-value="Teacher & Student">Teacher & Student</button>
-            <button class="option" data-value="Boss & Employee">Boss & Employee</button>
-            <button class="option" data-value="Officer & Criminal">Officer & Criminal</button>
-            <button class="option" data-value="Royalty & Commoner">Royalty & Commoner</button>
-            <button class="option" data-value="Superhero & Villain">Superhero & Villain</button>
-            <button class="option" data-value="Repairman & House Owner">Repairman & House Owner</button>
-            <button class="option" data-value="Massage Therapist & Client">Massage Therapist & Client</button>
+            <button class="option list-option multi-option" data-value="Doctor & Patient">
+              <span>Doctor &amp; Patient</span>
+              <span class="option-check" aria-hidden="true"></span>
+            </button>
+            <button class="option list-option multi-option" data-value="Teacher & Student">
+              <span>Teacher &amp; Student</span>
+              <span class="option-check" aria-hidden="true"></span>
+            </button>
+            <button class="option list-option multi-option" data-value="Boss & Employee">
+              <span>Boss &amp; Employee</span>
+              <span class="option-check" aria-hidden="true"></span>
+            </button>
+            <button class="option list-option multi-option" data-value="Officer & Criminal">
+              <span>Officer &amp; Criminal</span>
+              <span class="option-check" aria-hidden="true"></span>
+            </button>
+            <button class="option list-option multi-option" data-value="Royalty & Commoner">
+              <span>Royalty &amp; Commoner</span>
+              <span class="option-check" aria-hidden="true"></span>
+            </button>
+            <button class="option list-option multi-option" data-value="Superhero & Villain">
+              <span>Superhero &amp; Villain</span>
+              <span class="option-check" aria-hidden="true"></span>
+            </button>
+            <button class="option list-option multi-option" data-value="Repairman & House Owner">
+              <span>Repairman &amp; House Owner</span>
+              <span class="option-check" aria-hidden="true"></span>
+            </button>
+            <button class="option list-option multi-option" data-value="Massage Therapist & Client">
+              <span>Massage Therapist &amp; Client</span>
+              <span class="option-check" aria-hidden="true"></span>
+            </button>
           </div>
           <button class="primary full" data-action="continue" disabled>Continue</button>
         </section>
@@ -957,6 +1000,6 @@
     </div>
 
     <script src="app.js"></script>
-    <div class="version-tag">voron ver. 0.2.1</div>
+    <div class="version-tag">voron ver. 0.2.2</div>
   </body>
 </html>
