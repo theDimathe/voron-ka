@@ -520,22 +520,34 @@ input[type="range"] {
 }
 
 .summary-metric {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   gap: 12px;
   align-items: center;
 }
 
 .summary-meter {
-  margin-top: 6px;
-  width: 78px;
-  height: 78px;
+  --percent: 50;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
-  border: 6px solid rgba(255, 255, 255, 0.1);
+  background: conic-gradient(var(--accent) calc(var(--percent) * 1%), rgba(255, 255, 255, 0.1) 0);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--accent);
   font-weight: 700;
+  margin-left: auto;
+}
+
+.summary-meter span {
+  background: #0b0b0f;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .summary-extras {

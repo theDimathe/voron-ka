@@ -305,8 +305,8 @@ function updateSummary() {
   const joinList = (key, fallback) => (state[key].length ? state[key] : fallback);
   const tags = [
     state.figure || 'Extra skinny',
-    state.breast || 'Small',
-    state.butt || 'Small',
+    `${state.breast || 'Small'} breasts`,
+    `${state.butt || 'Small'} butt`,
     state.hair || 'Blonde',
     ...joinList('preferences', ['No makeup']),
     state.lookingFor || 'Romantic roleplay',
@@ -324,6 +324,17 @@ function updateSummary() {
       tagsContainer.appendChild(tag);
     });
   }
+
+  const setMeter = (key, value) => {
+    const meter = document.querySelector(`[data-summary-meter="${key}"]`);
+    if (meter) {
+      meter.style.setProperty('--percent', value);
+    }
+  };
+
+  setMeter('libido', state.libido);
+  setMeter('kink', state.kink);
+  setMeter('nudity', state.nudity);
 
   const extras = document.querySelector('[data-summary="extras"]');
   if (extras) {
