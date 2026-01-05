@@ -14,12 +14,7 @@ const stepSlugs = [
   'traits',
   'try',
   'scenarios',
-  'analysis-1',
-  'spicy-photos',
-  'analysis-2',
-  'voice-messages',
-  'analysis-3',
-  'special-videos',
+  'analysis',
   'summary',
   'pricing',
 ];
@@ -44,8 +39,8 @@ const state = {
 };
 
 const multiSteps = new Set([6, 10, 11]);
-const autoAdvanceSteps = new Set([0, 1, 2, 3, 4, 5, 13, 15, 17]);
-const analysisSteps = new Set([12, 14, 16]);
+const autoAdvanceSteps = new Set([0, 1, 2, 3, 4, 5]);
+const analysisSteps = new Set([12]);
 const selectionRequiredSteps = new Set([6, 8, 10, 11]);
 
 const selectionsMap = {
@@ -56,9 +51,6 @@ const selectionsMap = {
   4: 'butt',
   5: 'hair',
   8: 'lookingFor',
-  13: 'spicyPhotos',
-  15: 'voiceMessages',
-  17: 'specialVideos',
 };
 
 function updateUrlForStep(index) {
@@ -85,9 +77,9 @@ function showStep(index) {
   updateProgressTrack(index);
   updateContinueState(index);
   if (analysisSteps.has(index)) {
-    runProgressAnimation(index);
+    runAnalysisFlow(index);
   }
-  if (index === 18) {
+  if (index === 13) {
     updateSummary();
   }
 }
@@ -176,19 +168,77 @@ function bindSliders() {
   });
 }
 
-function runProgressAnimation(stepIndex) {
+function runAnalysisFlow(stepIndex) {
   const step = steps[stepIndex];
   const bars = step.querySelectorAll('.bar');
   const values = step.querySelectorAll('.progress-value');
+  const modal = document.getElementById('analysisModal');
+  const modalText = document.getElementById('analysisModalText');
+  const modalButtons = modal?.querySelectorAll('[data-modal-answer]') ?? [];
+
+  if (!modal || !modalText) return;
 
   bars.forEach((bar) => (bar.style.width = '0%'));
   values.forEach((value) => (value.textContent = '0%'));
 
-  const targets = [100, stepIndex === 12 ? 65 : stepIndex === 14 ? 80 : 100, stepIndex === 16 ? 40 : 15];
-  let progress = [0, 0, 0];
+  const questions = [
+    { key: 'spicyPhotos', text: 'Would you like to receive spicy photos?' },
+    { key: 'voiceMessages', text: 'Would you like to receive voice messages?' },
+    { key: 'specialVideos', text: 'Would you like to receive special videos?' },
+  ];
+
+  let stage = 0;
+  const progress = [0, 0, 0];
+  let paused = false;
+
+  const showModal = (index) => {
+    modalText.textContent = questions[index].text;
+    modal.classList.add('show');
+    modal.setAttribute('aria-hidden', 'false');
+    paused = true;
+  };
+
+  const hideModal = () => {
+    modal.classList.remove('show');
+    modal.setAttribute('aria-hidden', 'true');
+    paused = false;
+  };
+
+  const buttons = Array.from(modalButtons).map((button) => {
+    const clone = button.cloneNode(true);
+    button.replaceWith(clone);
+    return clone;
+  });
+
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const answer = button.dataset.modalAnswer;
+      if (answer && questions[stage]) {
+        state[questions[stage].key] = answer;
+      }
+      hideModal();
+      stage += 1;
+      if (stage >= questions.length) {
+        setTimeout(() => {
+          if (currentStep === stepIndex) {
+            nextStep();
+          }
+        }, 600);
+      }
+    });
+  });
 
   const interval = setInterval(() => {
-    progress = progress.map((value, idx) => Math.min(value + Math.ceil(Math.random() * 7), targets[idx]));
+    if (currentStep !== stepIndex) {
+      clearInterval(interval);
+      return;
+    }
+
+    if (paused || stage >= questions.length) {
+      return;
+    }
+
+    progress[stage] = Math.min(progress[stage] + Math.ceil(Math.random() * 7), 100);
     bars.forEach((bar, idx) => {
       bar.style.width = `${progress[idx]}%`;
     });
@@ -196,13 +246,8 @@ function runProgressAnimation(stepIndex) {
       value.textContent = `${progress[idx]}%`;
     });
 
-    if (progress.every((value, idx) => value >= targets[idx])) {
-      clearInterval(interval);
-      setTimeout(() => {
-        if (currentStep === stepIndex) {
-          nextStep();
-        }
-      }, 800);
+    if (progress[stage] >= 100) {
+      showModal(stage);
     }
   }, 160);
 }

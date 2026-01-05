@@ -407,6 +407,38 @@ input[type="range"] {
   border-radius: 14px;
 }
 
+.analysis-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 20;
+}
+
+.analysis-modal.show {
+  display: flex;
+}
+
+.analysis-modal-card {
+  width: min(360px, 90vw);
+  background: #141417;
+  border-radius: 18px;
+  border: 2px solid rgba(255, 159, 10, 0.35);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: center;
+}
+
+.analysis-modal-actions {
+  display: grid;
+  gap: 12px;
+}
+
 .progress {
   height: 10px;
   border-radius: 999px;
