@@ -633,6 +633,7 @@ input[type="range"] {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  text-align: center;
 }
 
 .pricing-hero {
@@ -665,9 +666,10 @@ input[type="range"] {
 
 .pricing-hero-media img {
   width: 100%;
-  height: auto;
+  height: 190px;
   border-radius: 14px;
   display: block;
+  object-fit: cover;
 }
 
 .pricing-header {
@@ -702,6 +704,7 @@ input[type="range"] {
   margin: 0;
   display: grid;
   gap: 8px;
+  text-align: left;
 }
 
 .benefits li {
@@ -711,16 +714,8 @@ input[type="range"] {
 }
 
 .benefits li::before {
-  content: "✔";
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: rgba(255, 198, 103, 0.2);
-  color: var(--accent);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.65rem;
+  content: "🌶️";
+  font-size: 1rem;
 }
 
 .discount {
@@ -758,6 +753,7 @@ input[type="range"] {
   position: relative;
   display: grid;
   gap: 10px;
+  text-align: left;
 }
 
 .progress-item:hover {
@@ -767,6 +763,7 @@ input[type="range"] {
 .plan.highlight {
   border-color: rgba(255, 198, 103, 0.8);
   box-shadow: 0 0 0 1px rgba(255, 198, 103, 0.4);
+  background: rgba(255, 198, 103, 0.08);
 }
 
 .ribbon {
@@ -784,12 +781,21 @@ input[type="range"] {
 .off {
   color: #ffc667;
   font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255, 198, 103, 0.18);
+  font-size: 0.75rem;
+  width: fit-content;
 }
 
 .price {
   display: flex;
   gap: 10px;
   align-items: baseline;
+  justify-content: space-between;
 }
 
 .price .old {
@@ -798,7 +804,7 @@ input[type="range"] {
 }
 
 .price .new {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 700;
 }
 
@@ -807,6 +813,9 @@ input[type="range"] {
   align-items: baseline;
   gap: 6px;
   color: rgba(255, 255, 255, 0.7);
+  justify-content: flex-end;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 8px;
 }
 
 .per-day strong {
@@ -816,7 +825,26 @@ input[type="range"] {
 
 .notice-row {
   display: grid;
-  gap: 6px;
+  gap: 10px;
+  justify-items: center;
+}
+
+.notice-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+}
+
+.notice-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .notice {
@@ -849,6 +877,12 @@ input[type="range"] {
   color: rgba(255, 255, 255, 0.7);
 }
 
+.featured-logos img {
+  height: 20px;
+  width: auto;
+  opacity: 0.7;
+}
+
 .featured-subtitle {
   margin: 10px 0 0;
   color: rgba(255, 255, 255, 0.7);
@@ -859,8 +893,30 @@ input[type="range"] {
   padding: 14px;
   border-radius: 14px;
   background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  text-align: left;
+}
+
+.review-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.review-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.review-content {
   display: grid;
-  gap: 6px;
+  gap: 4px;
 }
 
 .review-rating {
@@ -899,6 +955,10 @@ input[type="range"] {
   gap: 16px;
 }
 
+.featured-section h3 {
+  text-align: center;
+}
+
 .featured-grid {
   display: grid;
   gap: 12px;
@@ -911,7 +971,7 @@ input[type="range"] {
   background: rgba(255, 255, 255, 0.04);
   display: grid;
   gap: 6px;
-  text-align: center;
+  text-align: left;
 }
 
 .featured-card img {
@@ -951,6 +1011,30 @@ blockquote {
   display: grid;
   gap: 12px;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  text-align: left;
+}
+
+.stats-title {
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 0 0 14px;
+}
+
+.stats-title span {
+  color: var(--accent);
+}
+
+.stats-item {
+  display: grid;
+  gap: 6px;
+  padding: 10px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.stats-icon {
+  font-size: 1.2rem;
+  color: var(--accent);
 }
 
 .stats-title {
@@ -976,11 +1060,28 @@ blockquote {
 
 .stats-grid strong {
   display: block;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
 }
 
 .faq details {
   margin-bottom: 8px;
+}
+
+.faq-item {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 14px;
+  padding: 10px 12px;
+  text-align: left;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.faq-item p {
+  margin: 8px 0 0;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .guarantee-header {
