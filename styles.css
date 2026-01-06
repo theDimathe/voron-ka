@@ -632,25 +632,42 @@ input[type="range"] {
 .pricing {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
 }
 
 .pricing-hero {
   display: flex;
+  flex-direction: column;
   gap: 16px;
-  align-items: center;
-  padding: 16px;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.02);
+  align-items: stretch;
 }
 
-.pricing-hero img {
-  width: 86px;
-  height: 86px;
+.pricing-hero-text {
+  text-align: center;
+}
+
+.pricing-hero-text h2 {
+  color: var(--accent);
+  margin: 0;
+}
+
+.pricing-hero-text p {
+  margin: 6px 0 0;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.pricing-hero-media {
   border-radius: 18px;
-  object-fit: cover;
-  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.02);
+  padding: 12px;
+}
+
+.pricing-hero-media img {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  display: block;
 }
 
 .pricing-header {
@@ -665,6 +682,13 @@ input[type="range"] {
   padding: 6px 14px;
   border-radius: 999px;
   font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.badge-icon {
+  font-size: 0.9rem;
 }
 
 .timer {
@@ -677,19 +701,53 @@ input[type="range"] {
   padding: 0;
   margin: 0;
   display: grid;
-  gap: 6px;
+  gap: 8px;
+}
+
+.benefits li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.benefits li::before {
+  content: "✔";
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(255, 198, 103, 0.2);
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
 }
 
 .discount {
-  padding: 16px;
+  padding: 18px;
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.04);
+  text-align: center;
+}
+
+.discount h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.discount h3 span {
+  color: var(--accent);
+}
+
+.discount p {
+  margin: 6px 0 0;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .plans {
   display: grid;
   gap: 16px;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: 1fr;
 }
 
 .plan {
@@ -699,7 +757,7 @@ input[type="range"] {
   background: rgba(255, 255, 255, 0.03);
   position: relative;
   display: grid;
-  gap: 8px;
+  gap: 10px;
 }
 
 .progress-item:hover {
@@ -707,15 +765,15 @@ input[type="range"] {
 }
 
 .plan.highlight {
-  border-color: rgba(255, 118, 248, 0.7);
-  box-shadow: 0 0 0 1px rgba(255, 118, 248, 0.4);
+  border-color: rgba(255, 198, 103, 0.8);
+  box-shadow: 0 0 0 1px rgba(255, 198, 103, 0.4);
 }
 
 .ribbon {
   position: absolute;
   top: -12px;
   right: 16px;
-  background: #ff76f8;
+  background: var(--accent);
   color: #0b0b0f;
   padding: 4px 10px;
   border-radius: 999px;
@@ -744,6 +802,23 @@ input[type="range"] {
   font-weight: 700;
 }
 
+.per-day {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.per-day strong {
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.notice-row {
+  display: grid;
+  gap: 6px;
+}
+
 .notice {
   color: rgba(255, 255, 255, 0.7);
 }
@@ -763,6 +838,104 @@ input[type="range"] {
   background: rgba(255, 255, 255, 0.03);
 }
 
+.featured-logos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.featured-subtitle {
+  margin: 10px 0 0;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.review-card {
+  margin-top: 16px;
+  padding: 14px;
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.4);
+  display: grid;
+  gap: 6px;
+}
+
+.review-rating {
+  color: var(--accent);
+  letter-spacing: 2px;
+}
+
+.review-name {
+  font-weight: 700;
+}
+
+.review-text {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.review-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.review-dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.review-dots span.active {
+  background: var(--accent);
+}
+
+.featured-section {
+  display: grid;
+  gap: 16px;
+}
+
+.featured-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+.featured-card {
+  padding: 10px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  display: grid;
+  gap: 6px;
+  text-align: center;
+}
+
+.featured-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.featured-name {
+  font-weight: 600;
+}
+
+.featured-meta {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.featured-stars {
+  color: var(--accent);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+}
+
 .quotes {
   display: grid;
   gap: 8px;
@@ -774,40 +947,31 @@ blockquote {
   color: rgba(255, 255, 255, 0.75);
 }
 
-.featured-users {
-  display: grid;
-  gap: 12px;
-  margin-top: 12px;
-  font-size: 0.9rem;
-}
-
-.featured-user {
-  display: grid;
-  grid-template-columns: 40px 1fr auto;
-  gap: 10px;
-  align-items: center;
-  padding: 8px 12px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.04);
-}
-
-.featured-user img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.featured-user .verified {
-  color: var(--accent);
-  font-weight: 600;
-  font-size: 0.8rem;
-}
-
 .stats-grid {
   display: grid;
   gap: 12px;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+.stats-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.stats-title h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.stats-title h3 span {
+  color: var(--accent);
+}
+
+.laurel {
+  color: var(--accent);
 }
 
 .stats-grid strong {
@@ -819,15 +983,38 @@ blockquote {
   margin-bottom: 8px;
 }
 
-.secure {
-  text-align: center;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.6);
+.guarantee-header {
+  display: grid;
+  gap: 12px;
+  align-items: center;
 }
 
-.pricing-footer {
-  width: 100%;
-  border-radius: 16px;
+.guarantee-header h3 {
+  margin: 0 0 6px;
+}
+
+.guarantee-badge {
+  display: grid;
+  place-items: center;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  gap: 4px;
+}
+
+.guarantee-badge span {
+  font-size: 1.1rem;
+}
+
+.secure-note {
+  margin-top: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .version-tag {
