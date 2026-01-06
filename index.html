@@ -531,7 +531,17 @@
 
         <section class="step" data-step="13">
           <div class="summary-hero">
-            <img class="summary-avatar" src="assets/step-13-summary/summary-avatar.webp" alt="AI girl" />
+            <div class="summary-avatar-frame">
+              <div class="summary-loader" role="status" aria-label="Loading image"></div>
+              <video
+                class="summary-avatar"
+                data-summary-avatar
+                autoplay
+                playsinline
+                loop
+                muted
+              ></video>
+            </div>
             <div>
               <h2>Your AI Girl is ready</h2>
               <p class="summary-subtitle">
@@ -553,29 +563,23 @@
           <div class="summary-metrics">
             <div class="summary-metric">
               <span class="summary-icon">🧭</span>
-              <div>
-                <div>Libido intensity</div>
-                <div class="summary-meter" data-summary-meter="libido">
-                  <span data-summary="libido">50%</span>
-                </div>
+              <div class="summary-metric-label">Libido intensity</div>
+              <div class="summary-meter" data-summary-meter="libido">
+                <span data-summary="libido">50%</span>
               </div>
             </div>
             <div class="summary-metric">
               <span class="summary-icon">👠</span>
-              <div>
-                <div>Kink Openness</div>
-                <div class="summary-meter" data-summary-meter="kink">
-                  <span data-summary="kink">50%</span>
-                </div>
+              <div class="summary-metric-label">Kink Openness</div>
+              <div class="summary-meter" data-summary-meter="kink">
+                <span data-summary="kink">50%</span>
               </div>
             </div>
             <div class="summary-metric">
               <span class="summary-icon">🫦</span>
-              <div>
-                <div>Comfort with Nudity</div>
-                <div class="summary-meter" data-summary-meter="nudity">
-                  <span data-summary="nudity">50%</span>
-                </div>
+              <div class="summary-metric-label">Comfort with Nudity</div>
+              <div class="summary-meter" data-summary-meter="nudity">
+                <span data-summary="nudity">50%</span>
               </div>
             </div>
           </div>
