@@ -22,11 +22,7 @@ body {
 }
 
 .topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 12px 0 24px;
+  display: none;
 }
 
 .logo {
@@ -44,11 +40,11 @@ body {
 }
 
 .wizard {
-  background: rgba(11, 11, 15, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: transparent;
+  border: none;
   border-radius: 24px;
-  padding: 32px;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+  padding: 32px 8px;
+  box-shadow: none;
 }
 
 .step {
@@ -62,14 +58,15 @@ body {
 }
 
 .hero {
-  background: linear-gradient(120deg, rgba(255, 118, 248, 0.18), rgba(133, 160, 255, 0.12));
-  padding: 24px;
-  border-radius: 20px;
+  background: none;
+  padding: 0;
+  border-radius: 0;
 }
 
 h1 {
   margin: 0 0 12px;
-  font-size: 2rem;
+  font-size: 2.6rem;
+  line-height: 1.2;
 }
 
 h2 {
@@ -139,6 +136,50 @@ h2 {
 
 .option-label {
   font-weight: 600;
+}
+
+.step[data-step="0"] {
+  align-items: center;
+  text-align: center;
+  gap: 28px;
+}
+
+.step[data-step="0"] .subtitle {
+  font-size: 1.05rem;
+}
+
+.step[data-step="0"] .options.grid {
+  grid-template-columns: repeat(4, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.step[data-step="0"] .option {
+  padding: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #1b1b1f;
+  border: 1px solid #2c2c36;
+}
+
+.step[data-step="0"] .option-media {
+  max-width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 0;
+  background: #1b1b1f;
+}
+
+.step[data-step="0"] .option-label {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 1.05rem;
+  background: #1b1b1f;
+}
+
+.step[data-step="0"] .option:not(.has-media) {
+  grid-column: 1 / -1;
+  padding: 16px 24px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .primary,
