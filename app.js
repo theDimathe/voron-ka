@@ -313,11 +313,20 @@ function updateSummary() {
 
   const avatarVideo = document.querySelector('[data-summary-avatar]');
   if (avatarVideo) {
+    const selectedOption = steps[0]?.querySelector('.option.selected video');
+    const selectedSrc =
+      selectedOption?.currentSrc || selectedOption?.getAttribute('src') || '';
     const selection = state.ethnicity || 'Caucasian';
-    const videoSrc = ethnicityVideos[selection] ?? ethnicityVideos.Caucasian;
-    if (avatarVideo.getAttribute('src') !== videoSrc) {
-      avatarVideo.setAttribute('src', videoSrc);
+    const videoSrc = selectedSrc || ethnicityVideos[selection] || ethnicityVideos.Caucasian;
+    if (videoSrc && avatarVideo.getAttribute('data-active-src') !== videoSrc) {
+      avatarVideo.innerHTML = '';
+      const source = document.createElement('source');
+      source.src = videoSrc;
+      source.type = 'video/mp4';
+      avatarVideo.appendChild(source);
+      avatarVideo.setAttribute('data-active-src', videoSrc);
       avatarVideo.load();
+      avatarVideo.play().catch(() => {});
     }
   }
 
