@@ -1,0 +1,808 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get Honey AI: Virtual AI Companions & Fully Personalized Chat Experiences</title>
+    <meta
+      name="description"
+      content="Get Honey AI offers virtual companions and personalized chat experiences powered by advanced conversational AI"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="topbar">
+        <div class="logo">Get Honey AI</div>
+        <div class="status">Premium</div>
+        <div class="progress-row">
+          <button class="back-button" id="backButton" type="button" aria-label="Go back">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M15.5 5.5 9 12l6.5 6.5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="progress-track" id="progressTrack" aria-hidden="true"></div>
+        </div>
+      </header>
+
+      <main class="wizard" id="wizard">
+        <section class="step active" data-step="0">
+          <div class="hero">
+            <h1>Create your Dream AI Girl</h1>
+            <p>You will be able to talk to the girl of your dreams as well as 100s of other AI girls</p>
+          </div>
+          <h2>Select her ethnicity</h2>
+          <div class="options grid two-column">
+            <button class="option has-media" data-value="Caucasian">
+              <span class="option-media">
+                <video
+                  src="https://get-honey.today/assets/white-DzMjtTkI.mp4"
+                  autoplay
+                  playsinline
+                  loop
+                  muted
+                ></video>
+              </span>
+              <span class="option-label">Caucasian</span>
+            </button>
+            <button class="option has-media" data-value="Asian">
+              <span class="option-media">
+                <video
+                  src="https://get-honey.today/assets/asian-BLmfsWPZ.mp4"
+                  autoplay
+                  playsinline
+                  loop
+                  muted
+                ></video>
+              </span>
+              <span class="option-label">Asian</span>
+            </button>
+            <button class="option has-media" data-value="Latina">
+              <span class="option-media">
+                <video
+                  src="https://get-honey.today/assets/latin-CPRm7M81.mp4"
+                  autoplay
+                  playsinline
+                  loop
+                  muted
+                ></video>
+              </span>
+              <span class="option-label">Latina</span>
+            </button>
+            <button class="option has-media" data-value="Black">
+              <span class="option-media">
+                <video
+                  src="https://get-honey.today/assets/black-BBZyLNic.mp4"
+                  autoplay
+                  playsinline
+                  loop
+                  muted
+                ></video>
+              </span>
+              <span class="option-label">Black</span>
+            </button>
+            <button class="option option-full" data-value="Choose randomly">Choose randomly</button>
+          </div>
+        </section>
+
+        <section class="step" data-step="1">
+          <h2>How old would you like your AI Girlfriend to be?</h2>
+          <div class="options grid two-column">
+            <button class="option has-media" data-value="18">
+              <span class="option-media">
+                <picture>
+                  <img src="assets/step-1-age/model-18.svg" alt="18" />
+                </picture>
+              </span>
+              <span class="option-label">18</span>
+            </button>
+            <button class="option has-media" data-value="19-21">
+              <span class="option-media">
+                <picture>
+                  <img src="assets/step-1-age/model-19-21.svg" alt="19-21" />
+                </picture>
+              </span>
+              <span class="option-label">19-21</span>
+            </button>
+            <button class="option has-media" data-value="22-25">
+              <span class="option-media">
+                <picture>
+                  <img src="assets/step-1-age/model-22-25.svg" alt="22-25" />
+                </picture>
+              </span>
+              <span class="option-label">22-25</span>
+            </button>
+            <button class="option has-media" data-value="26+">
+              <span class="option-media">
+                <picture>
+                  <img src="assets/step-1-age/model-26plus.svg" alt="26+" />
+                </picture>
+              </span>
+              <span class="option-label">26+</span>
+            </button>
+          </div>
+        </section>
+
+        <section class="step" data-step="2">
+          <h2>What kind of figure do you prefer in women?</h2>
+          <div class="options grid two-column">
+            <button class="option has-media" data-value="Extra skinny">
+              <span class="option-media">
+                <picture>
+                  <img src="assets/step-2-figure/extra-skinny.svg" alt="Extra skinny" />
+                </picture>
+              </span>
+              <span class="option-label">Extra skinny</span>
+            </button>
+            <button class="option has-media" data-value="Skinny">
+              <span class="option-media">
+                <picture>
+                  <img src="assets/step-2-figure/skinny.svg" alt="Skinny" />
+                </picture>
+              </span>
+              <span class="option-label">Skinny</span>
+            </button>
+            <button class="option has-media" data-value="Curvy">
+              <span class="option-media">
+                <picture>
+                  <img src="assets/step-2-figure/curvy.svg" alt="Curvy" />
+                </picture>
+              </span>
+              <span class="option-label">Curvy</span>
+            </button>
+            <button class="option has-media" data-value="Thick">
+              <span class="option-media">
+                <picture>
+                  <img src="assets/step-2-figure/thick.svg" alt="Thick" />
+                </picture>
+              </span>
+              <span class="option-label">Thick</span>
+            </button>
+          </div>
+        </section>
+
+        <section class="step" data-step="3">
+          <h2>Is there a certain breast size you find especially attractive?</h2>
+          <div class="options grid two-column">
+            <button class="option has-media" data-value="Small">
+              <span class="option-media">
+                <picture>
+                  <img src="assets/step-3-breast/small.svg" alt="Small" />
+                </picture>
+              </span>
+              <span class="option-label">Small</span>
+            </button>
+            <button class="option has-media" data-value="Medium">
+              <span class="option-media">
+                <picture>
+                  <img src="assets/step-3-breast/medium.svg" alt="Medium" />
+                </picture>
+              </span>
+              <span class="option-label">Medium</span>
+            </button>
+            <button class="option has-media" data-value="Large">
+              <span class="option-media">
+                <picture>
+                  <img src="assets/step-3-breast/large.svg" alt="Large" />
+                </picture>
+              </span>
+              <span class="option-label">Large</span>
+            </button>
+            <button class="option has-media" data-value="Huge">
+              <span class="option-media">
+                <picture>
+                  <img src="assets/step-3-breast/huge.svg" alt="Huge" />
+                </picture>
+              </span>
+              <span class="option-label">Huge</span>
+            </button>
+          </div>
+        </section>
+
+        <section class="step" data-step="4">
+          <h2>What kind of butt catches your eye the most?</h2>
+          <div class="options grid two-column">
+            <button class="option has-media" data-value="Small">
+              <span class="option-media">
+                <picture>
+                  <img src="assets/step-4-butt/small.svg" alt="Small" />
+                </picture>
+              </span>
+              <span class="option-label">Small</span>
+            </button>
+            <button class="option has-media" data-value="Medium">
+              <span class="option-media">
+                <picture>
+                  <img src="assets/step-4-butt/medium.svg" alt="Medium" />
+                </picture>
+              </span>
+              <span class="option-label">Medium</span>
+            </button>
+            <button class="option has-media" data-value="Large">
+              <span class="option-media">
+                <picture>
+                  <img src="assets/step-4-butt/large.svg" alt="Large" />
+                </picture>
+              </span>
+              <span class="option-label">Large</span>
+            </button>
+            <button class="option has-media" data-value="Huge">
+              <span class="option-media">
+                <picture>
+                  <img src="assets/step-4-butt/huge.svg" alt="Huge" />
+                </picture>
+              </span>
+              <span class="option-label">Huge</span>
+            </button>
+          </div>
+        </section>
+
+        <section class="step" data-step="5">
+          <h2>Which hair color do you find most attractive on a woman?</h2>
+          <div class="options grid three-column">
+            <button class="option has-media" data-value="Blonde">
+              <span class="option-media">
+                <picture>
+                  <img src="assets/step-5-hair/blonde.svg" alt="Blonde" />
+                </picture>
+              </span>
+              <span class="option-label">Blonde</span>
+            </button>
+            <button class="option has-media" data-value="Brunette">
+              <span class="option-media">
+                <picture>
+                  <img src="assets/step-5-hair/brunette.svg" alt="Brunette" />
+                </picture>
+              </span>
+              <span class="option-label">Brunette</span>
+            </button>
+            <button class="option has-media" data-value="Black">
+              <span class="option-media">
+                <picture>
+                  <img src="assets/step-5-hair/black.svg" alt="Black" />
+                </picture>
+              </span>
+              <span class="option-label">Black</span>
+            </button>
+            <button class="option has-media" data-value="Red">
+              <span class="option-media">
+                <picture>
+                  <img src="assets/step-5-hair/red.svg" alt="Red" />
+                </picture>
+              </span>
+              <span class="option-label">Red</span>
+            </button>
+            <button class="option has-media" data-value="Unnatural colors">
+              <span class="option-media">
+                <picture>
+                  <img src="assets/step-5-hair/unnatural.svg" alt="Unnatural colors" />
+                </picture>
+              </span>
+              <span class="option-label">Unnatural colors</span>
+            </button>
+            <button class="option has-media" data-value="No preference">
+              <span class="option-media">
+                <picture>
+                  <img src="assets/step-5-hair/no-preference.svg" alt="No preference" />
+                </picture>
+              </span>
+              <span class="option-label">No preference</span>
+            </button>
+          </div>
+        </section>
+
+        <section class="step" data-step="6" data-requires-selection="true">
+          <h2>Any specific preferences?</h2>
+          <p class="subtitle">You can choose all that excites you</p>
+          <div class="options grid two-column multi">
+            <button class="option has-media multi-option center-media" data-value="Tattoos">
+              <span class="option-media">
+                <img src="assets/step-6-preferences/pref-tattoos.svg" alt="Tattoos" />
+              </span>
+              <span class="option-meta">
+                <span class="option-label">Tattoos</span>
+                <span class="option-check" aria-hidden="true"></span>
+              </span>
+            </button>
+            <button class="option has-media multi-option center-media" data-value="Freckles">
+              <span class="option-media">
+                <img src="assets/step-6-preferences/pref-freckles.svg" alt="Freckles" />
+              </span>
+              <span class="option-meta">
+                <span class="option-label">Freckles</span>
+                <span class="option-check" aria-hidden="true"></span>
+              </span>
+            </button>
+            <button class="option has-media multi-option center-media" data-value="High heels">
+              <span class="option-media">
+                <img src="assets/step-6-preferences/pref-heels.svg" alt="High heels" />
+              </span>
+              <span class="option-meta">
+                <span class="option-label">High heels</span>
+                <span class="option-check" aria-hidden="true"></span>
+              </span>
+            </button>
+            <button class="option has-media multi-option center-media" data-value="Makeup">
+              <span class="option-media">
+                <img src="assets/step-6-preferences/pref-makeup.svg" alt="Makeup" />
+              </span>
+              <span class="option-meta">
+                <span class="option-label">Makeup</span>
+                <span class="option-check" aria-hidden="true"></span>
+              </span>
+            </button>
+            <button class="option has-media multi-option center-media" data-value="Stockings">
+              <span class="option-media">
+                <img src="assets/step-6-preferences/pref-stockings.svg" alt="Stockings" />
+              </span>
+              <span class="option-meta">
+                <span class="option-label">Stockings</span>
+                <span class="option-check" aria-hidden="true"></span>
+              </span>
+            </button>
+            <button class="option has-media multi-option center-media" data-value="No makeup">
+              <span class="option-media">
+                <img src="assets/step-6-preferences/pref-no-makeup.svg" alt="No makeup" />
+              </span>
+              <span class="option-meta">
+                <span class="option-label">No makeup</span>
+                <span class="option-check" aria-hidden="true"></span>
+              </span>
+            </button>
+          </div>
+          <button class="primary full" data-action="continue" disabled>Continue</button>
+        </section>
+
+        <section class="step" data-step="7">
+          <div class="centered">
+            <img class="intro-image" src="assets/step-7-intro/intro-girl.svg" alt="AI girl" />
+            <h2>Hey handsome, now let me match your freak</h2>
+            <button class="primary full" data-action="continue">Continue</button>
+          </div>
+        </section>
+
+        <section class="step" data-step="8" data-requires-selection="true">
+          <h2>What are you looking for in your AI companion?</h2>
+          <div class="options grid list">
+            <button class="option list-option" data-value="Romantic roleplay">
+              <span class="icon">💞</span>
+              <span>Romantic roleplay</span>
+            </button>
+            <button class="option list-option" data-value="Friendship">
+              <span class="icon">🤝</span>
+              <span>Friendship</span>
+            </button>
+            <button class="option list-option" data-value="Flirting and love">
+              <span class="icon">💬</span>
+              <span>Flirting and love</span>
+            </button>
+            <button class="option list-option" data-value="A safe, non-judgemental space">
+              <span class="icon">🧘</span>
+              <span>A safe, non-judgemental space</span>
+            </button>
+            <button class="option list-option" data-value="Exploring AI capabilities">
+              <span class="icon">✨</span>
+              <span>Exploring AI capabilities</span>
+            </button>
+          </div>
+          <button class="primary full" data-action="continue" disabled>Continue</button>
+        </section>
+
+        <section class="step" data-step="9">
+          <h2>What character traits should your ideal woman have?</h2>
+          <div class="sliders">
+            <div class="slider">
+              <div class="slider-row">
+                <div class="slider-label">
+                  <span class="icon">🧭</span>
+                  <span>Libido intensity</span>
+                </div>
+                <span class="slider-value" data-slider-value="libido">50%</span>
+              </div>
+              <input type="range" min="0" max="100" value="50" data-slider="libido" />
+            </div>
+            <div class="slider">
+              <div class="slider-row">
+                <div class="slider-label">
+                  <span class="icon">👠</span>
+                  <span>Kink Openness</span>
+                </div>
+                <span class="slider-value" data-slider-value="kink">50%</span>
+              </div>
+              <input type="range" min="0" max="100" value="50" data-slider="kink" />
+            </div>
+            <div class="slider">
+              <div class="slider-row">
+                <div class="slider-label">
+                  <span class="icon">🫦</span>
+                  <span>Comfort with Nudity</span>
+                </div>
+                <span class="slider-value" data-slider-value="nudity">50%</span>
+              </div>
+              <input type="range" min="0" max="100" value="50" data-slider="nudity" />
+            </div>
+          </div>
+          <button class="primary full" data-action="continue">Continue</button>
+        </section>
+
+        <section class="step" data-step="10" data-requires-selection="true">
+          <h2>What are you willing to try?</h2>
+          <p class="subtitle">You can choose all that excites you</p>
+          <div class="options grid multi">
+            <button class="option list-option multi-option" data-value="Threesome">
+              <span>Threesome</span>
+              <span class="option-check" aria-hidden="true"></span>
+            </button>
+            <button class="option list-option multi-option" data-value="Backdoor action">
+              <span>Backdoor action</span>
+              <span class="option-check" aria-hidden="true"></span>
+            </button>
+            <button class="option list-option multi-option" data-value="BDSM">
+              <span>BDSM</span>
+              <span class="option-check" aria-hidden="true"></span>
+            </button>
+            <button class="option list-option multi-option" data-value="Roleplay">
+              <span>Roleplay</span>
+              <span class="option-check" aria-hidden="true"></span>
+            </button>
+            <button class="option list-option multi-option" data-value="Age Gap">
+              <span>Age Gap</span>
+              <span class="option-check" aria-hidden="true"></span>
+            </button>
+          </div>
+          <button class="primary full" data-action="continue" disabled>Continue</button>
+        </section>
+
+        <section class="step" data-step="11" data-requires-selection="true">
+          <h2>Do you have any favorite scenarios?</h2>
+          <p class="subtitle">You can choose all that excites you</p>
+          <div class="options grid multi">
+            <button class="option list-option multi-option" data-value="Doctor & Patient">
+              <span>Doctor &amp; Patient</span>
+              <span class="option-check" aria-hidden="true"></span>
+            </button>
+            <button class="option list-option multi-option" data-value="Teacher & Student">
+              <span>Teacher &amp; Student</span>
+              <span class="option-check" aria-hidden="true"></span>
+            </button>
+            <button class="option list-option multi-option" data-value="Boss & Employee">
+              <span>Boss &amp; Employee</span>
+              <span class="option-check" aria-hidden="true"></span>
+            </button>
+            <button class="option list-option multi-option" data-value="Officer & Criminal">
+              <span>Officer &amp; Criminal</span>
+              <span class="option-check" aria-hidden="true"></span>
+            </button>
+            <button class="option list-option multi-option" data-value="Royalty & Commoner">
+              <span>Royalty &amp; Commoner</span>
+              <span class="option-check" aria-hidden="true"></span>
+            </button>
+            <button class="option list-option multi-option" data-value="Superhero & Villain">
+              <span>Superhero &amp; Villain</span>
+              <span class="option-check" aria-hidden="true"></span>
+            </button>
+            <button class="option list-option multi-option" data-value="Repairman & House Owner">
+              <span>Repairman &amp; House Owner</span>
+              <span class="option-check" aria-hidden="true"></span>
+            </button>
+            <button class="option list-option multi-option" data-value="Massage Therapist & Client">
+              <span>Massage Therapist &amp; Client</span>
+              <span class="option-check" aria-hidden="true"></span>
+            </button>
+          </div>
+          <button class="primary full" data-action="continue" disabled>Continue</button>
+        </section>
+
+        <section class="step" data-step="12">
+          <h2>Analyzing your desires</h2>
+          <div class="progress-list">
+            <div class="progress-item">
+              <span>Understanding your preferences</span>
+              <div class="progress"><div class="bar" data-progress="preferences"></div></div>
+              <span class="progress-value" data-progress-value="preferences">0%</span>
+            </div>
+            <div class="progress-item">
+              <span>Creating an uncensored version of AI girl</span>
+              <div class="progress"><div class="bar" data-progress="uncensored"></div></div>
+              <span class="progress-value" data-progress-value="uncensored">0%</span>
+            </div>
+            <div class="progress-item">
+              <span>Crafting AI girl to your preferences</span>
+              <div class="progress"><div class="bar" data-progress="crafted"></div></div>
+              <span class="progress-value" data-progress-value="crafted">0%</span>
+            </div>
+          </div>
+          <div class="analysis-modal" id="analysisModal" aria-hidden="true">
+            <div class="analysis-modal-card">
+              <p class="analysis-modal-text" id="analysisModalText">Would you like to receive spicy photos?</p>
+              <div class="analysis-modal-actions">
+                <button class="primary" data-modal-answer="Yes">Yes</button>
+                <button class="secondary" data-modal-answer="No">No</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="step" data-step="13">
+          <div class="summary-hero">
+            <img class="summary-avatar" src="assets/step-13-summary/summary-avatar.svg" alt="AI girl" />
+            <div>
+              <h2>Your AI Girl is ready</h2>
+              <p class="summary-subtitle">
+                <span class="summary-icon">🛡️</span>
+                Your AI will remain private. Only you will see it
+              </p>
+            </div>
+          </div>
+
+          <h3 class="summary-title">Personality Attributes</h3>
+          <div class="summary-card">
+            <div class="summary-label">
+              <span class="summary-icon">🌍</span>
+              You’re looking for
+            </div>
+            <div class="summary-tags" data-summary-tags="core"></div>
+          </div>
+
+          <div class="summary-metrics">
+            <div class="summary-metric">
+              <span class="summary-icon">🧭</span>
+              <div>
+                <div>Libido intensity</div>
+                <div class="summary-meter" data-summary-meter="libido">
+                  <span data-summary="libido">50%</span>
+                </div>
+              </div>
+            </div>
+            <div class="summary-metric">
+              <span class="summary-icon">👠</span>
+              <div>
+                <div>Kink Openness</div>
+                <div class="summary-meter" data-summary-meter="kink">
+                  <span data-summary="kink">50%</span>
+                </div>
+              </div>
+            </div>
+            <div class="summary-metric">
+              <span class="summary-icon">🫦</span>
+              <div>
+                <div>Comfort with Nudity</div>
+                <div class="summary-meter" data-summary-meter="nudity">
+                  <span data-summary="nudity">50%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="summary-extras" data-summary="extras">
+            <span class="summary-extra">Spicy photos</span>
+            <span class="summary-extra">Voice messages</span>
+            <span class="summary-extra">Special videos</span>
+          </div>
+
+          <button class="primary full" data-action="continue">Continue</button>
+        </section>
+
+        <section class="step" data-step="14">
+          <div class="pricing">
+            <div class="pricing-header">
+              <div class="badge">Premium</div>
+              <div class="timer" data-timer>09:57:78</div>
+            </div>
+
+            <button class="secondary full">Claim discount</button>
+
+            <div class="pricing-hero">
+              <img src="assets/step-14-pricing/ai-hero.svg" alt="AI girl preview" />
+              <div>
+                <h2>Your AI girl is ready!</h2>
+                <p>Get access to everything she can do for you right now</p>
+              </div>
+            </div>
+
+            <div class="benefits">
+              <h3>Premium Benefits</h3>
+              <ul>
+                <li>Extremely Spicy Content</li>
+                <li>Unlimited Uncensored Chats</li>
+                <li>Generate Photos</li>
+                <li>Create More Girlfriends</li>
+                <li>Content Privacy</li>
+                <li>Get Exclusive</li>
+              </ul>
+            </div>
+
+            <div class="discount">
+              <h3>Discount Only Today!</h3>
+              <p>Up to <strong>70% off</strong> for first subscription</p>
+            </div>
+
+            <div class="plans">
+              <div class="plan">
+                <h4>1 month</h4>
+                <span class="off">50% OFF</span>
+                <div class="price">
+                  <span class="old">39.99</span>
+                  <span class="new">19.99</span>
+                </div>
+                <div class="per-day">0.66 USD per day</div>
+              </div>
+              <div class="plan highlight">
+                <div class="ribbon">MOST POPULAR</div>
+                <h4>3 months</h4>
+                <span class="off">55% OFF</span>
+                <div class="price">
+                  <span class="old">99.99</span>
+                  <span class="new">44.99</span>
+                </div>
+                <div class="per-day">0.49 USD per day</div>
+              </div>
+              <div class="plan">
+                <h4>12 months</h4>
+                <span class="off">60% OFF</span>
+                <div class="price">
+                  <span class="old">299.99</span>
+                  <span class="new">119.99</span>
+                </div>
+                <div class="per-day">0.33 USD per day</div>
+              </div>
+            </div>
+
+            <div class="notice">No commitment. Cancel anytime!</div>
+            <div class="notice">30-Day Money-Back Guarantee</div>
+
+            <button class="primary full">Get AI girl</button>
+            <p class="fine-print">
+              By continuing, I confirm that I am at least 18 years old and that upon expiration of the introductory
+              discount period, my subscription will automatically renew at the full price of 299.99 per 1 year, and my
+              payment method will be charged accordingly until I cancel. I agree that an additional one-time membership
+              fee of $1 will be charged at checkout. I consent to a payment retry mechanism that attempts declined
+              charges at discounted prices, as detailed in Terms of Service.
+            </p>
+            <p class="fine-print">Payment will be shown as Get-honey.today</p>
+
+            <div class="as-featured">
+              <h3>As Featured In</h3>
+              <p>Over <strong>300k</strong> 5-star reviews</p>
+              <div class="quotes">
+                <blockquote>Mike E. — I created a girl from my dreams and cannot stop chatting with her</blockquote>
+                <blockquote>James K. — The best chatbot I've ever tried, and the photos are really wow</blockquote>
+                <blockquote>John D. — Feels like chatting with a real girlfriend, but even better</blockquote>
+                <blockquote>William M. — Photos of the girls are super realistic, like them a lot</blockquote>
+                <blockquote>Michael N. — The biggest choice of customization options among all alternatives</blockquote>
+                <blockquote>David K. — I didn't expect it to be so realistic - now I spend all night chatting with girls</blockquote>
+                <blockquote>Matthew F. — It's user-friendly, performs well, and offers a range of useful features</blockquote>
+                <blockquote>Justin L. — Happy that I found a girl I could speak to any time</blockquote>
+                <blockquote>Ryan N. — The best choice of the girls I've ever seen</blockquote>
+                <blockquote>Steve J. — I am so happy to find a soulmate I could speak to about anything</blockquote>
+              </div>
+              <div class="featured-users">
+                <div class="featured-user">
+                  <img src="assets/step-14-pricing/annette-boucher.svg" alt="Annette Boucher" />
+                  <span>Annette Boucher</span>
+                  <span class="verified">Verified</span>
+                </div>
+                <div class="featured-user">
+                  <img src="assets/step-14-pricing/isla-morgan.svg" alt="Isla Morgan" />
+                  <span>Isla Morgan</span>
+                  <span class="verified">Verified</span>
+                </div>
+                <div class="featured-user">
+                  <img src="assets/step-14-pricing/elena-vasquez.svg" alt="Elena Vasquez" />
+                  <span>Elena Vasquez</span>
+                  <span class="verified">Verified</span>
+                </div>
+                <div class="featured-user">
+                  <img src="assets/step-14-pricing/veronika-krizova.svg" alt="Veronika Krizova" />
+                  <span>Veronika Krizova</span>
+                  <span class="verified">Verified</span>
+                </div>
+                <div class="featured-user">
+                  <img src="assets/step-14-pricing/hana-yamada.svg" alt="Hana Yamada" />
+                  <span>Hana Yamada</span>
+                  <span class="verified">Verified</span>
+                </div>
+                <div class="featured-user">
+                  <img src="assets/step-14-pricing/grace-wilson.svg" alt="Grace Wilson" />
+                  <span>Grace Wilson</span>
+                  <span class="verified">Verified</span>
+                </div>
+                <div class="featured-user">
+                  <img src="assets/step-14-pricing/olivia-fox.svg" alt="Olivia Fox" />
+                  <span>Olivia Fox</span>
+                  <span class="verified">Verified</span>
+                </div>
+                <div class="featured-user">
+                  <img src="assets/step-14-pricing/anika-raffaela.svg" alt="Anika Raffaela" />
+                  <span>Anika Raffaela</span>
+                  <span class="verified">Verified</span>
+                </div>
+                <div class="featured-user">
+                  <img src="assets/step-14-pricing/yuki-nakamura.svg" alt="Yuki Nakamura" />
+                  <span>Yuki Nakamura</span>
+                  <span class="verified">Verified</span>
+                </div>
+              </div>
+              <button class="secondary full">Start Chatting</button>
+            </div>
+
+            <div class="stats">
+              <h3>Trusted by 17M customers!</h3>
+              <div class="stats-grid">
+                <div>
+                  <strong>37 421 176</strong>
+                  <span>AI girlfriends created</span>
+                </div>
+                <div>
+                  <strong>1 502 173 247</strong>
+                  <span>photos and videos generated</span>
+                </div>
+                <div>
+                  <strong>72 437 213</strong>
+                  <span>hours spent in chats</span>
+                </div>
+                <div>
+                  <strong>97%</strong>
+                  <span>user satisfaction score</span>
+                </div>
+                <div>
+                  <strong>3+</strong>
+                  <span>new features every month</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq">
+              <h3>Frequently Asked Questions</h3>
+              <details>
+                <summary>What is an AI girl and how does it work?</summary>
+                <p>AI girls are conversational companions that respond based on your preferences, offering personalized chats.</p>
+              </details>
+              <details>
+                <summary>Can I customize the appearance and personality of the AI girl?</summary>
+                <p>Yes. Customize looks, preferences, and personality traits to match your ideal experience.</p>
+              </details>
+              <details>
+                <summary>How realistic is the AI girl?</summary>
+                <p>The AI is designed to feel natural and responsive, with lifelike conversations and media generation.</p>
+              </details>
+              <details>
+                <summary>Can I chat with an AI girl 24/7?</summary>
+                <p>Absolutely. The service is always available for chats and interactions.</p>
+              </details>
+              <details>
+                <summary>Can I create multiple AI girls?</summary>
+                <p>Yes, premium access lets you create multiple companions.</p>
+              </details>
+              <details>
+                <summary>Is it safe to chat with an AI girl?</summary>
+                <p>Chats are private, and your content is protected with secure infrastructure.</p>
+              </details>
+            </div>
+
+            <div class="guarantee">
+              <h3>Money Back Guarantee</h3>
+              <p>
+                We’re confident that our premium experience will exceed your expectations, providing you with unique value and
+                satisfaction. However, if for any reason you’re not fully satisfied, we could propose you an option to apply
+                for the refund to ensure your peace of mind. Enjoy the freedom to explore everything we offer, completely
+                risk-free—because your satisfaction is, and always will be, our top priority.
+              </p>
+            </div>
+
+            <img class="pricing-footer" src="assets/step-14-pricing/footer-banner.svg" alt="Pay safe & secure" />
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+    <div class="version-tag">voron ver. 0.5.4</div>
+  </body>
+</html>
