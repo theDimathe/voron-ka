@@ -581,6 +581,24 @@ input[type="range"] {
   gap: 20px;
 }
 
+.pricing-hero {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.pricing-hero img {
+  width: 86px;
+  height: 86px;
+  border-radius: 18px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
 .pricing-header {
   display: flex;
   justify-content: space-between;
@@ -704,9 +722,32 @@ blockquote {
 
 .featured-users {
   display: grid;
-  gap: 6px;
+  gap: 12px;
   margin-top: 12px;
   font-size: 0.9rem;
+}
+
+.featured-user {
+  display: grid;
+  grid-template-columns: 40px 1fr auto;
+  gap: 10px;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.featured-user img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.featured-user .verified {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.8rem;
 }
 
 .stats-grid {
@@ -728,6 +769,11 @@ blockquote {
   text-align: center;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.6);
+}
+
+.pricing-footer {
+  width: 100%;
+  border-radius: 16px;
 }
 
 .version-tag {
