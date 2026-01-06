@@ -526,6 +526,15 @@ input[type="range"] {
   align-items: center;
 }
 
+.summary-metric .summary-icon {
+  font-size: 1.6rem;
+}
+
+.summary-metric div:first-child {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
 
 .summary-meter {
   --percent: 50;
