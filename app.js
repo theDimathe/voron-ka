@@ -1,5 +1,6 @@
 const steps = Array.from(document.querySelectorAll('.step'));
 let currentStep = 0;
+let summaryLoaderTimeout;
 
 const stepSlugs = [
   'ethnicity',
@@ -81,6 +82,7 @@ function showStep(index) {
   }
   if (index === 13) {
     updateSummary();
+    startSummaryLoader();
   }
 }
 
@@ -351,6 +353,23 @@ function updateSummary() {
       extras.appendChild(tag);
     });
   }
+}
+
+function startSummaryLoader() {
+  const frame = document.querySelector('.summary-avatar-frame');
+  if (!frame) return;
+  const loader = frame.querySelector('.summary-loader');
+  const avatar = frame.querySelector('.summary-avatar');
+  if (!loader || !avatar) return;
+
+  avatar.classList.add('is-hidden');
+  loader.classList.add('is-visible');
+  clearTimeout(summaryLoaderTimeout);
+  summaryLoaderTimeout = setTimeout(() => {
+    if (currentStep !== 13) return;
+    loader.classList.remove('is-visible');
+    avatar.classList.remove('is-hidden');
+  }, 3000);
 }
 
 function startTimer() {
