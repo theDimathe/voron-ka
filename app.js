@@ -39,6 +39,13 @@ const state = {
   specialVideos: null,
 };
 
+const ethnicityVideos = {
+  Caucasian: 'https://get-honey.today/assets/white-DzMjtTkI.mp4',
+  Asian: 'https://get-honey.today/assets/asian-BLmfsWPZ.mp4',
+  Latina: 'https://get-honey.today/assets/latin-CPRm7M81.mp4',
+  Black: 'https://get-honey.today/assets/black-BBZyLNic.mp4',
+};
+
 const multiSteps = new Set([6, 10, 11]);
 const autoAdvanceSteps = new Set([0, 1, 2, 3, 4, 5]);
 const analysisSteps = new Set([12]);
@@ -303,6 +310,16 @@ function updateSummary() {
   setText('libido', `${state.libido}%`);
   setText('kink', `${state.kink}%`);
   setText('nudity', `${state.nudity}%`);
+
+  const avatarVideo = document.querySelector('[data-summary-avatar]');
+  if (avatarVideo) {
+    const selection = state.ethnicity || 'Caucasian';
+    const videoSrc = ethnicityVideos[selection] ?? ethnicityVideos.Caucasian;
+    if (avatarVideo.getAttribute('src') !== videoSrc) {
+      avatarVideo.setAttribute('src', videoSrc);
+      avatarVideo.load();
+    }
+  }
 
   const joinList = (key, fallback) => (state[key].length ? state[key] : fallback);
   const tags = [
