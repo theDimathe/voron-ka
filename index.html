@@ -21,6 +21,14 @@
       <header class="topbar">
         <div class="logo">Get Honey AI</div>
         <div class="status">Premium</div>
+        <div class="progress-row">
+          <button class="back-button" id="backButton" type="button" aria-label="Go back">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M15.5 5.5 9 12l6.5 6.5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="progress-track" id="progressTrack" aria-hidden="true"></div>
+        </div>
       </header>
 
       <main class="wizard" id="wizard">
@@ -30,7 +38,7 @@
             <p>You will be able to talk to the girl of your dreams as well as 100s of other AI girls</p>
           </div>
           <h2>Select her ethnicity</h2>
-          <div class="options grid">
+          <div class="options grid two-column">
             <button class="option has-media" data-value="Caucasian">
               <span class="option-media">
                 <video
@@ -79,13 +87,13 @@
               </span>
               <span class="option-label">Black</span>
             </button>
-            <button class="option" data-value="Choose randomly">Choose randomly</button>
+            <button class="option option-full" data-value="Choose randomly">Choose randomly</button>
           </div>
         </section>
 
         <section class="step" data-step="1">
           <h2>How old would you like your AI Girlfriend to be?</h2>
-          <div class="options grid">
+          <div class="options grid two-column">
             <button class="option has-media" data-value="18">
               <span class="option-media">
                 <picture>
@@ -179,7 +187,7 @@
 
         <section class="step" data-step="2">
           <h2>What kind of figure do you prefer in women?</h2>
-          <div class="options grid">
+          <div class="options grid two-column">
             <button class="option has-media" data-value="Extra skinny">
               <span class="option-media">
                 <picture>
@@ -273,7 +281,7 @@
 
         <section class="step" data-step="3">
           <h2>Is there a certain breast size you find especially attractive?</h2>
-          <div class="options grid">
+          <div class="options grid two-column">
             <button class="option has-media" data-value="Small">
               <span class="option-media">
                 <picture>
@@ -315,7 +323,7 @@
 
         <section class="step" data-step="4">
           <h2>What kind of butt catches your eye the most?</h2>
-          <div class="options grid">
+          <div class="options grid two-column">
             <button class="option has-media" data-value="Small">
               <span class="option-media">
                 <picture>
@@ -357,7 +365,7 @@
 
         <section class="step" data-step="5">
           <h2>Which hair color do you find most attractive on a woman?</h2>
-          <div class="options grid">
+          <div class="options grid three-column">
             <button class="option has-media" data-value="Blonde">
               <span class="option-media">
                 <picture>
@@ -493,35 +501,101 @@
           </div>
         </section>
 
-        <section class="step" data-step="6">
+        <section class="step" data-step="6" data-requires-selection="true">
           <h2>Any specific preferences?</h2>
           <p class="subtitle">You can choose all that excites you</p>
-          <div class="options grid multi">
-            <button class="option" data-value="Tattoos">Tattoos</button>
-            <button class="option" data-value="Freckles">Freckles</button>
-            <button class="option" data-value="High heels">High heels</button>
-            <button class="option" data-value="Makeup">Makeup</button>
-            <button class="option" data-value="Stockings">Stockings</button>
-            <button class="option" data-value="No makeup">No makeup</button>
+          <div class="options grid two-column multi">
+            <button class="option has-media multi-option center-media" data-value="Tattoos">
+              <span class="option-media">
+                <img src="https://placehold.co/180x280?text=Tattoos" alt="Tattoos" />
+              </span>
+              <span class="option-meta">
+                <span class="option-label">Tattoos</span>
+                <span class="option-check" aria-hidden="true"></span>
+              </span>
+            </button>
+            <button class="option has-media multi-option center-media" data-value="Freckles">
+              <span class="option-media">
+                <img src="https://placehold.co/180x280?text=Freckles" alt="Freckles" />
+              </span>
+              <span class="option-meta">
+                <span class="option-label">Freckles</span>
+                <span class="option-check" aria-hidden="true"></span>
+              </span>
+            </button>
+            <button class="option has-media multi-option center-media" data-value="High heels">
+              <span class="option-media">
+                <img src="https://placehold.co/180x280?text=High+heels" alt="High heels" />
+              </span>
+              <span class="option-meta">
+                <span class="option-label">High heels</span>
+                <span class="option-check" aria-hidden="true"></span>
+              </span>
+            </button>
+            <button class="option has-media multi-option center-media" data-value="Makeup">
+              <span class="option-media">
+                <img src="https://placehold.co/180x280?text=Makeup" alt="Makeup" />
+              </span>
+              <span class="option-meta">
+                <span class="option-label">Makeup</span>
+                <span class="option-check" aria-hidden="true"></span>
+              </span>
+            </button>
+            <button class="option has-media multi-option center-media" data-value="Stockings">
+              <span class="option-media">
+                <img src="https://placehold.co/180x280?text=Stockings" alt="Stockings" />
+              </span>
+              <span class="option-meta">
+                <span class="option-label">Stockings</span>
+                <span class="option-check" aria-hidden="true"></span>
+              </span>
+            </button>
+            <button class="option has-media multi-option center-media" data-value="No makeup">
+              <span class="option-media">
+                <img src="https://placehold.co/180x280?text=No+makeup" alt="No makeup" />
+              </span>
+              <span class="option-meta">
+                <span class="option-label">No makeup</span>
+                <span class="option-check" aria-hidden="true"></span>
+              </span>
+            </button>
           </div>
-          <button class="primary" data-action="continue">Continue</button>
+          <button class="primary full" data-action="continue" disabled>Continue</button>
         </section>
 
         <section class="step" data-step="7">
-          <h2>Hey handsome, now let me match your freak</h2>
-          <button class="primary" data-action="continue">Continue</button>
+          <div class="centered">
+            <img class="intro-image" src="https://placehold.co/320x320?text=AI+Girl" alt="AI girl" />
+            <h2>Hey handsome, now let me match your freak</h2>
+            <button class="primary full" data-action="continue">Continue</button>
+          </div>
         </section>
 
-        <section class="step" data-step="8">
+        <section class="step" data-step="8" data-requires-selection="true">
           <h2>What are you looking for in your AI companion?</h2>
-          <div class="options grid">
-            <button class="option" data-value="Romantic roleplay">Romantic roleplay</button>
-            <button class="option" data-value="Friendship">Friendship</button>
-            <button class="option" data-value="Flirting and love">Flirting and love</button>
-            <button class="option" data-value="A safe, non-judgemental space">A safe, non-judgemental space</button>
-            <button class="option" data-value="Exploring AI capabilities">Exploring AI capabilities</button>
+          <div class="options grid list">
+            <button class="option list-option" data-value="Romantic roleplay">
+              <span class="icon">💞</span>
+              <span>Romantic roleplay</span>
+            </button>
+            <button class="option list-option" data-value="Friendship">
+              <span class="icon">🤝</span>
+              <span>Friendship</span>
+            </button>
+            <button class="option list-option" data-value="Flirting and love">
+              <span class="icon">💬</span>
+              <span>Flirting and love</span>
+            </button>
+            <button class="option list-option" data-value="A safe, non-judgemental space">
+              <span class="icon">🧘</span>
+              <span>A safe, non-judgemental space</span>
+            </button>
+            <button class="option list-option" data-value="Exploring AI capabilities">
+              <span class="icon">✨</span>
+              <span>Exploring AI capabilities</span>
+            </button>
           </div>
-          <button class="primary" data-action="continue">Continue</button>
+          <button class="primary full" data-action="continue" disabled>Continue</button>
         </section>
 
         <section class="step" data-step="9">
@@ -529,56 +603,104 @@
           <div class="sliders">
             <div class="slider">
               <div class="slider-row">
-                <span>Libido intensity</span>
+                <div class="slider-label">
+                  <span class="icon">🧭</span>
+                  <span>Libido intensity</span>
+                </div>
                 <span class="slider-value" data-slider-value="libido">50%</span>
               </div>
               <input type="range" min="0" max="100" value="50" data-slider="libido" />
             </div>
             <div class="slider">
               <div class="slider-row">
-                <span>Kink Openness</span>
+                <div class="slider-label">
+                  <span class="icon">👠</span>
+                  <span>Kink Openness</span>
+                </div>
                 <span class="slider-value" data-slider-value="kink">50%</span>
               </div>
               <input type="range" min="0" max="100" value="50" data-slider="kink" />
             </div>
             <div class="slider">
               <div class="slider-row">
-                <span>Comfort with Nudity</span>
+                <div class="slider-label">
+                  <span class="icon">🫦</span>
+                  <span>Comfort with Nudity</span>
+                </div>
                 <span class="slider-value" data-slider-value="nudity">50%</span>
               </div>
               <input type="range" min="0" max="100" value="50" data-slider="nudity" />
             </div>
           </div>
-          <button class="primary" data-action="continue">Continue</button>
+          <button class="primary full" data-action="continue">Continue</button>
         </section>
 
-        <section class="step" data-step="10">
+        <section class="step" data-step="10" data-requires-selection="true">
           <h2>What are you willing to try?</h2>
           <p class="subtitle">You can choose all that excites you</p>
           <div class="options grid multi">
-            <button class="option" data-value="Threesome">Threesome</button>
-            <button class="option" data-value="Backdoor action">Backdoor action</button>
-            <button class="option" data-value="BDSM">BDSM</button>
-            <button class="option" data-value="Roleplay">Roleplay</button>
-            <button class="option" data-value="Age Gap">Age Gap</button>
+            <button class="option list-option multi-option" data-value="Threesome">
+              <span>Threesome</span>
+              <span class="option-check" aria-hidden="true"></span>
+            </button>
+            <button class="option list-option multi-option" data-value="Backdoor action">
+              <span>Backdoor action</span>
+              <span class="option-check" aria-hidden="true"></span>
+            </button>
+            <button class="option list-option multi-option" data-value="BDSM">
+              <span>BDSM</span>
+              <span class="option-check" aria-hidden="true"></span>
+            </button>
+            <button class="option list-option multi-option" data-value="Roleplay">
+              <span>Roleplay</span>
+              <span class="option-check" aria-hidden="true"></span>
+            </button>
+            <button class="option list-option multi-option" data-value="Age Gap">
+              <span>Age Gap</span>
+              <span class="option-check" aria-hidden="true"></span>
+            </button>
           </div>
-          <button class="primary" data-action="continue">Continue</button>
+          <button class="primary full" data-action="continue" disabled>Continue</button>
         </section>
 
-        <section class="step" data-step="11">
+        <section class="step" data-step="11" data-requires-selection="true">
           <h2>Do you have any favorite scenarios?</h2>
           <p class="subtitle">You can choose all that excites you</p>
           <div class="options grid multi">
-            <button class="option" data-value="Doctor & Patient">Doctor & Patient</button>
-            <button class="option" data-value="Teacher & Student">Teacher & Student</button>
-            <button class="option" data-value="Boss & Employee">Boss & Employee</button>
-            <button class="option" data-value="Officer & Criminal">Officer & Criminal</button>
-            <button class="option" data-value="Royalty & Commoner">Royalty & Commoner</button>
-            <button class="option" data-value="Superhero & Villain">Superhero & Villain</button>
-            <button class="option" data-value="Repairman & House Owner">Repairman & House Owner</button>
-            <button class="option" data-value="Massage Therapist & Client">Massage Therapist & Client</button>
+            <button class="option list-option multi-option" data-value="Doctor & Patient">
+              <span>Doctor &amp; Patient</span>
+              <span class="option-check" aria-hidden="true"></span>
+            </button>
+            <button class="option list-option multi-option" data-value="Teacher & Student">
+              <span>Teacher &amp; Student</span>
+              <span class="option-check" aria-hidden="true"></span>
+            </button>
+            <button class="option list-option multi-option" data-value="Boss & Employee">
+              <span>Boss &amp; Employee</span>
+              <span class="option-check" aria-hidden="true"></span>
+            </button>
+            <button class="option list-option multi-option" data-value="Officer & Criminal">
+              <span>Officer &amp; Criminal</span>
+              <span class="option-check" aria-hidden="true"></span>
+            </button>
+            <button class="option list-option multi-option" data-value="Royalty & Commoner">
+              <span>Royalty &amp; Commoner</span>
+              <span class="option-check" aria-hidden="true"></span>
+            </button>
+            <button class="option list-option multi-option" data-value="Superhero & Villain">
+              <span>Superhero &amp; Villain</span>
+              <span class="option-check" aria-hidden="true"></span>
+            </button>
+            <button class="option list-option multi-option" data-value="Repairman & House Owner">
+              <span>Repairman &amp; House Owner</span>
+              <span class="option-check" aria-hidden="true"></span>
+            </button>
+            <button class="option list-option multi-option" data-value="Massage Therapist & Client">
+              <span>Massage Therapist &amp; Client</span>
+              <span class="option-check" aria-hidden="true"></span>
+            </button>
           </div>
-          <button class="primary" data-action="continue">Continue</button>
+          <button class="primary full" data-action="continue" disabled>Continue</button>
         </section>
 
         <section class="step" data-step="12">
@@ -600,126 +722,93 @@
               <span class="progress-value" data-progress-value="crafted">0%</span>
             </div>
           </div>
+          <div class="analysis-modal" id="analysisModal" aria-hidden="true">
+            <div class="analysis-modal-card">
+              <p class="analysis-modal-text" id="analysisModalText">Would you like to receive spicy photos?</p>
+              <div class="analysis-modal-actions">
+                <button class="primary" data-modal-answer="Yes">Yes</button>
+                <button class="secondary" data-modal-answer="No">No</button>
+              </div>
+            </div>
+          </div>
         </section>
 
         <section class="step" data-step="13">
-          <h2>Would you like to receive spicy photos?</h2>
-          <div class="options grid">
-            <button class="option" data-value="Yes">Yes</button>
-            <button class="option" data-value="No">No</button>
+          <div class="summary-hero">
+            <img class="summary-avatar" src="https://placehold.co/120x120?text=AI" alt="AI girl" />
+            <div>
+              <h2>Your AI Girl is ready</h2>
+              <p class="summary-subtitle">
+                <span class="summary-icon">🛡️</span>
+                Your AI will remain private. Only you will see it
+              </p>
+            </div>
           </div>
+
+          <h3 class="summary-title">Personality Attributes</h3>
+          <div class="summary-card">
+            <div class="summary-label">
+              <span class="summary-icon">🌍</span>
+              You’re looking for
+            </div>
+            <div class="summary-tags" data-summary-tags="core"></div>
+          </div>
+
+          <div class="summary-metrics">
+            <div class="summary-metric">
+              <span class="summary-icon">🧭</span>
+              <div>
+                <div>Libido intensity</div>
+                <div class="summary-meter" data-summary-meter="libido">
+                  <span data-summary="libido">50%</span>
+                </div>
+              </div>
+            </div>
+            <div class="summary-metric">
+              <span class="summary-icon">👠</span>
+              <div>
+                <div>Kink Openness</div>
+                <div class="summary-meter" data-summary-meter="kink">
+                  <span data-summary="kink">50%</span>
+                </div>
+              </div>
+            </div>
+            <div class="summary-metric">
+              <span class="summary-icon">🫦</span>
+              <div>
+                <div>Comfort with Nudity</div>
+                <div class="summary-meter" data-summary-meter="nudity">
+                  <span data-summary="nudity">50%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="summary-extras" data-summary="extras">
+            <span class="summary-extra">Spicy photos</span>
+            <span class="summary-extra">Voice messages</span>
+            <span class="summary-extra">Special videos</span>
+          </div>
+
+          <button class="primary full" data-action="continue">Continue</button>
         </section>
 
         <section class="step" data-step="14">
-          <h2>Analyzing your desires</h2>
-          <div class="progress-list">
-            <div class="progress-item">
-              <span>Understanding your preferences</span>
-              <div class="progress"><div class="bar" data-progress="preferences-2"></div></div>
-              <span class="progress-value" data-progress-value="preferences-2">0%</span>
-            </div>
-            <div class="progress-item">
-              <span>Creating an uncensored version of AI girl</span>
-              <div class="progress"><div class="bar" data-progress="uncensored-2"></div></div>
-              <span class="progress-value" data-progress-value="uncensored-2">0%</span>
-            </div>
-            <div class="progress-item">
-              <span>Crafting AI girl to your preferences</span>
-              <div class="progress"><div class="bar" data-progress="crafted-2"></div></div>
-              <span class="progress-value" data-progress-value="crafted-2">0%</span>
-            </div>
-          </div>
-        </section>
-
-        <section class="step" data-step="15">
-          <h2>Would you like to receive voice messages?</h2>
-          <div class="options grid">
-            <button class="option" data-value="Yes">Yes</button>
-            <button class="option" data-value="No">No</button>
-          </div>
-        </section>
-
-        <section class="step" data-step="16">
-          <h2>Analyzing your desires</h2>
-          <div class="progress-list">
-            <div class="progress-item">
-              <span>Understanding your preferences</span>
-              <div class="progress"><div class="bar" data-progress="preferences-3"></div></div>
-              <span class="progress-value" data-progress-value="preferences-3">0%</span>
-            </div>
-            <div class="progress-item">
-              <span>Creating an uncensored version of AI girl</span>
-              <div class="progress"><div class="bar" data-progress="uncensored-3"></div></div>
-              <span class="progress-value" data-progress-value="uncensored-3">0%</span>
-            </div>
-            <div class="progress-item">
-              <span>Crafting AI girl to your preferences</span>
-              <div class="progress"><div class="bar" data-progress="crafted-3"></div></div>
-              <span class="progress-value" data-progress-value="crafted-3">0%</span>
-            </div>
-          </div>
-        </section>
-
-        <section class="step" data-step="17">
-          <h2>Would you like to receive special videos?</h2>
-          <div class="options grid">
-            <button class="option" data-value="Yes">Yes</button>
-            <button class="option" data-value="No">No</button>
-          </div>
-        </section>
-
-        <section class="step" data-step="18">
-          <h2>Your AI Girl is ready</h2>
-          <p>Your AI will remain private. Only you will see it</p>
-          <div class="summary">
-            <div class="summary-block">
-              <h3>Personality Attributes</h3>
-              <div class="summary-row">
-                <span>You’re looking for</span>
-                <span data-summary="lookingFor">Romantic roleplay</span>
-              </div>
-              <div class="summary-row">
-                <span data-summary="figure">Extra skinny</span>
-                <span data-summary="breast">Small</span>
-                <span data-summary="butt">Small</span>
-                <span data-summary="hair">Blonde</span>
-              </div>
-              <div class="summary-row" data-summary="preferences">Tattoos</div>
-              <div class="summary-row" data-summary="willing">Threesome</div>
-              <div class="summary-row" data-summary="scenarios">Doctor &amp; Patient</div>
-            </div>
-            <div class="summary-block">
-              <div class="summary-row">
-                <span>Libido intensity</span>
-                <span data-summary="libido">50%</span>
-              </div>
-              <div class="summary-row">
-                <span>Kink Openness</span>
-                <span data-summary="kink">50%</span>
-              </div>
-              <div class="summary-row">
-                <span>Comfort with Nudity</span>
-                <span data-summary="nudity">50%</span>
-              </div>
-            </div>
-            <div class="summary-block" data-summary="extras">
-              <span class="tag">Spicy photos</span>
-              <span class="tag">Voice messages</span>
-              <span class="tag">Special videos</span>
-            </div>
-          </div>
-          <button class="primary" data-action="continue">Continue</button>
-        </section>
-
-        <section class="step" data-step="19">
           <div class="pricing">
             <div class="pricing-header">
               <div class="badge">Premium</div>
-              <div class="timer" data-timer>09:55:01</div>
+              <div class="timer" data-timer>09:57:78</div>
             </div>
-            <button class="secondary">Claim discount</button>
-            <h2>Your AI girl is ready!</h2>
-            <p>Get access to everything she can do for you right now</p>
+
+            <button class="secondary full">Claim discount</button>
+
+            <div class="pricing-hero">
+              <img src="https://get-honey.today/assets/image-CZXdlgEF.webp" alt="AI girl preview" />
+              <div>
+                <h2>Your AI girl is ready!</h2>
+                <p>Get access to everything she can do for you right now</p>
+              </div>
+            </div>
 
             <div class="benefits">
               <h3>Premium Benefits</h3>
@@ -792,17 +881,57 @@
                 <blockquote>William M. — Photos of the girls are super realistic, like them a lot</blockquote>
                 <blockquote>Michael N. — The biggest choice of customization options among all alternatives</blockquote>
                 <blockquote>David K. — I didn't expect it to be so realistic - now I spend all night chatting with girls</blockquote>
+                <blockquote>Matthew F. — It's user-friendly, performs well, and offers a range of useful features</blockquote>
+                <blockquote>Justin L. — Happy that I found a girl I could speak to any time</blockquote>
+                <blockquote>Ryan N. — The best choice of the girls I've ever seen</blockquote>
+                <blockquote>Steve J. — I am so happy to find a soulmate I could speak to about anything</blockquote>
               </div>
               <div class="featured-users">
-                <span>Annette Boucher (Verified)</span>
-                <span>Isla Morgan (Verified)</span>
-                <span>Elena Vasquez (Verified)</span>
-                <span>Veronika Krizova (Verified)</span>
-                <span>Hana Yamada (Verified)</span>
-                <span>Grace Wilson (Verified)</span>
-                <span>Olivia Fox (Verified)</span>
-                <span>Anika Raffaela (Verified)</span>
-                <span>Yuki Nakamura (Verified)</span>
+                <div class="featured-user">
+                  <img src="https://get-honey.today/assets/annette-boucher-x7XJE3Ly.webp" alt="Annette Boucher" />
+                  <span>Annette Boucher</span>
+                  <span class="verified">Verified</span>
+                </div>
+                <div class="featured-user">
+                  <img src="https://get-honey.today/assets/isla-morgan-Dxmy1UlH.webp" alt="Isla Morgan" />
+                  <span>Isla Morgan</span>
+                  <span class="verified">Verified</span>
+                </div>
+                <div class="featured-user">
+                  <img src="https://get-honey.today/assets/elena-vasquez-DqzpKgLJ.webp" alt="Elena Vasquez" />
+                  <span>Elena Vasquez</span>
+                  <span class="verified">Verified</span>
+                </div>
+                <div class="featured-user">
+                  <img src="https://get-honey.today/assets/veronika-krizova-BP1eSOLe.webp" alt="Veronika Krizova" />
+                  <span>Veronika Krizova</span>
+                  <span class="verified">Verified</span>
+                </div>
+                <div class="featured-user">
+                  <img src="https://get-honey.today/assets/hana-yamada-U1YMnjbT.webp" alt="Hana Yamada" />
+                  <span>Hana Yamada</span>
+                  <span class="verified">Verified</span>
+                </div>
+                <div class="featured-user">
+                  <img src="https://get-honey.today/assets/grace-wilson-b8DlbjjP.webp" alt="Grace Wilson" />
+                  <span>Grace Wilson</span>
+                  <span class="verified">Verified</span>
+                </div>
+                <div class="featured-user">
+                  <img src="https://get-honey.today/assets/olivia-fox-CHKZjGHV.webp" alt="Olivia Fox" />
+                  <span>Olivia Fox</span>
+                  <span class="verified">Verified</span>
+                </div>
+                <div class="featured-user">
+                  <img src="https://get-honey.today/assets/anika-raffaela-CAZfRiIj.webp" alt="Anika Raffaela" />
+                  <span>Anika Raffaela</span>
+                  <span class="verified">Verified</span>
+                </div>
+                <div class="featured-user">
+                  <img src="https://get-honey.today/assets/yuki-nakamura-CCZawKBA.webp" alt="Yuki Nakamura" />
+                  <span>Yuki Nakamura</span>
+                  <span class="verified">Verified</span>
+                </div>
               </div>
               <button class="secondary full">Start Chatting</button>
             </div>
@@ -871,12 +1000,13 @@
               </p>
             </div>
 
-            <div class="secure">Pay safe &amp; secure</div>
+            <img class="pricing-footer" src="https://get-honey.today/assets/4901-footer-banner-D7vNQdgh.webp" alt="Pay safe & secure" />
           </div>
         </section>
       </main>
     </div>
 
     <script src="app.js"></script>
+    <div class="version-tag">voron ver. 0.5.1</div>
   </body>
 </html>
