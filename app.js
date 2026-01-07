@@ -1,5 +1,6 @@
 const steps = Array.from(document.querySelectorAll('.step'));
 let currentStep = 0;
+let summaryLoaderTimeout;
 
 const stepSlugs = [
   'ethnicity',
@@ -36,6 +37,13 @@ const state = {
   spicyPhotos: null,
   voiceMessages: null,
   specialVideos: null,
+};
+
+const ethnicityVideos = {
+  Caucasian: 'https://get-honey.today/assets/white-DzMjtTkI.mp4',
+  Asian: 'https://get-honey.today/assets/asian-BLmfsWPZ.mp4',
+  Latina: 'https://get-honey.today/assets/latin-CPRm7M81.mp4',
+  Black: 'https://get-honey.today/assets/black-BBZyLNic.mp4',
 };
 
 const multiSteps = new Set([6, 10, 11]);
@@ -81,6 +89,7 @@ function showStep(index) {
   }
   if (index === 13) {
     updateSummary();
+    startSummaryLoader();
   }
 }
 
@@ -302,6 +311,25 @@ function updateSummary() {
   setText('kink', `${state.kink}%`);
   setText('nudity', `${state.nudity}%`);
 
+  const avatarVideo = document.querySelector('[data-summary-avatar]');
+  if (avatarVideo) {
+    const selectedOption = steps[0]?.querySelector('.option.selected video');
+    const selectedSrc =
+      selectedOption?.currentSrc || selectedOption?.getAttribute('src') || '';
+    const selection = state.ethnicity || 'Caucasian';
+    const videoSrc = selectedSrc || ethnicityVideos[selection] || ethnicityVideos.Caucasian;
+    if (videoSrc && avatarVideo.getAttribute('data-active-src') !== videoSrc) {
+      avatarVideo.innerHTML = '';
+      const source = document.createElement('source');
+      source.src = videoSrc;
+      source.type = 'video/mp4';
+      avatarVideo.appendChild(source);
+      avatarVideo.setAttribute('data-active-src', videoSrc);
+      avatarVideo.load();
+      avatarVideo.play().catch(() => {});
+    }
+  }
+
   const joinList = (key, fallback) => (state[key].length ? state[key] : fallback);
   const tags = [
     state.figure || 'Extra skinny',
@@ -351,6 +379,23 @@ function updateSummary() {
       extras.appendChild(tag);
     });
   }
+}
+
+function startSummaryLoader() {
+  const frame = document.querySelector('.summary-avatar-frame');
+  if (!frame) return;
+  const loader = frame.querySelector('.summary-loader');
+  const avatar = frame.querySelector('.summary-avatar');
+  if (!loader || !avatar) return;
+
+  avatar.classList.add('is-hidden');
+  loader.classList.add('is-visible');
+  clearTimeout(summaryLoaderTimeout);
+  summaryLoaderTimeout = setTimeout(() => {
+    if (currentStep !== 13) return;
+    loader.classList.remove('is-visible');
+    avatar.classList.remove('is-hidden');
+  }, 3000);
 }
 
 function startTimer() {
