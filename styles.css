@@ -746,14 +746,26 @@ input[type="range"] {
 }
 
 .plan {
-  padding: 14px;
+  padding: 12px;
   border-radius: 18px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(255, 255, 255, 0.03);
   position: relative;
   display: grid;
-  gap: 6px;
+  gap: 4px;
   text-align: left;
+}
+
+.plan-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.plan-header h4 {
+  margin: 0;
+  font-size: 1rem;
 }
 
 .progress-item:hover {
@@ -804,7 +816,7 @@ input[type="range"] {
 }
 
 .price .new {
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   font-weight: 700;
 }
 
@@ -815,7 +827,7 @@ input[type="range"] {
   color: rgba(255, 255, 255, 0.7);
   justify-content: flex-end;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding-top: 6px;
+  padding-top: 4px;
 }
 
 .per-day strong {
