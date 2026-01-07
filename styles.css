@@ -632,7 +632,7 @@ input[type="range"] {
 .pricing {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 32px;
   text-align: center;
 }
 
@@ -707,6 +707,14 @@ input[type="range"] {
   text-align: left;
 }
 
+.pricing-section-title {
+  margin: 0 0 8px;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.01em;
+}
+
 .benefits li {
   display: flex;
   align-items: center;
@@ -723,11 +731,6 @@ input[type="range"] {
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.04);
   text-align: center;
-}
-
-.discount h3 {
-  margin: 0;
-  font-size: 1.25rem;
 }
 
 .discount h3 span {
@@ -886,6 +889,8 @@ input[type="range"] {
   padding: 16px;
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.03);
+  display: grid;
+  gap: 16px;
 }
 
 .featured-logos {
@@ -1043,7 +1048,7 @@ blockquote {
 .stats-title {
   text-align: center;
   font-size: 1.6rem;
-  margin: 0 0 14px;
+  margin: 0;
 }
 
 .stats-title span {
@@ -1096,7 +1101,7 @@ blockquote {
 }
 
 .guarantee-header h3 {
-  margin: 0 0 6px;
+  margin: 0;
   color: var(--accent);
   font-size: 1.25rem;
 }
