@@ -869,45 +869,6 @@ input[type="range"] {
   justify-content: center;
 }
 
-.per-day {
-  display: flex;
-  align-items: baseline;
-  gap: 6px;
-  color: rgba(255, 255, 255, 0.7);
-  justify-content: flex-end;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding-top: 4px;
-}
-
-.per-day strong {
-  font-size: 1.1rem;
-  color: #fff;
-}
-
-.notice-row {
-  display: grid;
-  gap: 10px;
-  justify-items: center;
-}
-
-.notice-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  color: rgba(255, 255, 255, 0.7);
-  font-weight: 600;
-}
-
-.notice-icon {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .notice {
   color: rgba(255, 255, 255, 0.7);
 }
