@@ -746,13 +746,13 @@ input[type="range"] {
 }
 
 .plan {
-  padding: 18px;
+  padding: 14px;
   border-radius: 18px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(255, 255, 255, 0.03);
   position: relative;
   display: grid;
-  gap: 10px;
+  gap: 6px;
   text-align: left;
 }
 
@@ -768,13 +768,13 @@ input[type="range"] {
 
 .ribbon {
   position: absolute;
-  top: -12px;
-  right: 16px;
+  top: -10px;
+  right: 12px;
   background: var(--accent);
   color: #0b0b0f;
-  padding: 4px 10px;
+  padding: 3px 10px;
   border-radius: 999px;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 700;
 }
 
@@ -784,10 +784,10 @@ input[type="range"] {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 4px 10px;
+  padding: 2px 8px;
   border-radius: 999px;
   background: rgba(255, 198, 103, 0.18);
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   width: fit-content;
 }
 
@@ -804,7 +804,7 @@ input[type="range"] {
 }
 
 .price .new {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 700;
 }
 
@@ -815,7 +815,7 @@ input[type="range"] {
   color: rgba(255, 255, 255, 0.7);
   justify-content: flex-end;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding-top: 8px;
+  padding-top: 6px;
 }
 
 .per-day strong {
@@ -1034,27 +1034,6 @@ blockquote {
 
 .stats-icon {
   font-size: 1.2rem;
-  color: var(--accent);
-}
-
-.stats-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  text-align: center;
-}
-
-.stats-title h3 {
-  margin: 0;
-  font-size: 1.2rem;
-}
-
-.stats-title h3 span {
-  color: var(--accent);
-}
-
-.laurel {
   color: var(--accent);
 }
 
