@@ -632,7 +632,7 @@ input[type="range"] {
 .pricing {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 28px;
   text-align: center;
 }
 
@@ -741,7 +741,7 @@ input[type="range"] {
 
 .plans {
   display: grid;
-  gap: 16px;
+  gap: 12px;
   grid-template-columns: 1fr;
 }
 
@@ -773,7 +773,7 @@ input[type="range"] {
 
 .plan-left {
   display: grid;
-  gap: 6px;
+  gap: 4px;
 }
 
 .progress-item:hover {
@@ -827,7 +827,7 @@ input[type="range"] {
 }
 
 .price .new {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #fff3d8;
 }
@@ -841,7 +841,7 @@ input[type="range"] {
 }
 
 .per-day strong {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   color: var(--accent);
 }
 
@@ -1097,6 +1097,8 @@ blockquote {
 
 .guarantee-header h3 {
   margin: 0 0 6px;
+  color: var(--accent);
+  font-size: 1.25rem;
 }
 
 .guarantee-badge {
@@ -1125,6 +1127,17 @@ blockquote {
   margin-top: 12px;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.7);
+}
+
+.pricing-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.pricing-footer img {
+  width: 100%;
+  max-width: 360px;
+  border-radius: 16px;
 }
 
 
