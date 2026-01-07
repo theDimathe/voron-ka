@@ -746,26 +746,34 @@ input[type="range"] {
 }
 
 .plan {
-  padding: 12px;
+  padding: 12px 14px;
   border-radius: 18px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(255, 255, 255, 0.03);
   position: relative;
-  display: grid;
-  gap: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
   text-align: left;
 }
 
 .plan-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 8px;
 }
 
 .plan-header h4 {
   margin: 0;
-  font-size: 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.plan-left {
+  display: grid;
+  gap: 6px;
 }
 
 .progress-item:hover {
@@ -773,8 +781,10 @@ input[type="range"] {
 }
 
 .plan.highlight {
-  border-color: rgba(255, 198, 103, 0.8);
-  box-shadow: 0 0 0 1px rgba(255, 198, 103, 0.4);
+  border-color: rgba(255, 198, 103, 0.9);
+  box-shadow:
+    0 0 0 1px rgba(255, 198, 103, 0.45),
+    0 0 18px rgba(255, 198, 103, 0.35);
   background: rgba(255, 198, 103, 0.08);
 }
 
@@ -799,7 +809,7 @@ input[type="range"] {
   padding: 2px 8px;
   border-radius: 999px;
   background: rgba(255, 198, 103, 0.18);
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   width: fit-content;
 }
 
@@ -807,17 +817,56 @@ input[type="range"] {
   display: flex;
   gap: 10px;
   align-items: baseline;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .price .old {
   text-decoration: line-through;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.67);
+  font-size: 0.9rem;
 }
 
 .price .new {
   font-size: 1.25rem;
   font-weight: 700;
+  color: #fff3d8;
+}
+
+.per-day {
+  display: grid;
+  text-align: right;
+  gap: 2px;
+  color: rgba(255, 255, 255, 0.7);
+  min-width: 88px;
+}
+
+.per-day strong {
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+
+.notice-row {
+  display: grid;
+  gap: 10px;
+  justify-items: center;
+}
+
+.notice-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+}
+
+.notice-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .per-day {
@@ -893,6 +942,10 @@ input[type="range"] {
   height: 20px;
   width: auto;
   opacity: 0.7;
+}
+
+.logo-placeholder {
+  display: none;
 }
 
 .featured-subtitle {
@@ -1113,12 +1166,6 @@ blockquote {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.guarantee-footer {
-  width: 100%;
-  border-radius: 14px;
-  margin-top: 12px;
-  display: block;
-}
 
 .version-tag {
   position: fixed;
