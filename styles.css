@@ -1098,6 +1098,7 @@ blockquote {
   display: grid;
   gap: 12px;
   align-items: center;
+  text-align: center;
 }
 
 .guarantee-header h3 {
@@ -1119,6 +1120,7 @@ blockquote {
   text-transform: uppercase;
   gap: 4px;
   overflow: hidden;
+  margin: 0 auto;
 }
 
 .guarantee-badge-image {
@@ -1134,16 +1136,6 @@ blockquote {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.pricing-footer {
-  display: flex;
-  justify-content: center;
-}
-
-.pricing-footer img {
-  width: 100%;
-  max-width: 360px;
-  border-radius: 16px;
-}
 
 
 .version-tag {
