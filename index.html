@@ -531,7 +531,17 @@
 
         <section class="step" data-step="13">
           <div class="summary-hero">
-            <img class="summary-avatar" src="assets/step-13-summary/summary-avatar.webp" alt="AI girl" />
+            <div class="summary-avatar-frame">
+              <div class="summary-loader" role="status" aria-label="Loading image"></div>
+              <video
+                class="summary-avatar"
+                data-summary-avatar
+                autoplay
+                playsinline
+                loop
+                muted
+              ></video>
+            </div>
             <div>
               <h2>Your AI Girl is ready</h2>
               <p class="summary-subtitle">
@@ -553,29 +563,23 @@
           <div class="summary-metrics">
             <div class="summary-metric">
               <span class="summary-icon">🧭</span>
-              <div>
-                <div>Libido intensity</div>
-                <div class="summary-meter" data-summary-meter="libido">
-                  <span data-summary="libido">50%</span>
-                </div>
+              <div class="summary-metric-label">Libido intensity</div>
+              <div class="summary-meter" data-summary-meter="libido">
+                <span data-summary="libido">50%</span>
               </div>
             </div>
             <div class="summary-metric">
               <span class="summary-icon">👠</span>
-              <div>
-                <div>Kink Openness</div>
-                <div class="summary-meter" data-summary-meter="kink">
-                  <span data-summary="kink">50%</span>
-                </div>
+              <div class="summary-metric-label">Kink Openness</div>
+              <div class="summary-meter" data-summary-meter="kink">
+                <span data-summary="kink">50%</span>
               </div>
             </div>
             <div class="summary-metric">
               <span class="summary-icon">🫦</span>
-              <div>
-                <div>Comfort with Nudity</div>
-                <div class="summary-meter" data-summary-meter="nudity">
-                  <span data-summary="nudity">50%</span>
-                </div>
+              <div class="summary-metric-label">Comfort with Nudity</div>
+              <div class="summary-meter" data-summary-meter="nudity">
+                <span data-summary="nudity">50%</span>
               </div>
             </div>
           </div>
@@ -592,70 +596,104 @@
         <section class="step" data-step="14">
           <div class="pricing">
             <div class="pricing-header">
-              <div class="badge">Premium</div>
-              <div class="timer" data-timer>09:57:78</div>
+              <div class="badge">
+                <span class="badge-icon">💎</span>
+                Premium
+              </div>
+              <div class="timer" data-timer>09:04:44</div>
             </div>
 
-            <button class="secondary full">Claim discount</button>
-
             <div class="pricing-hero">
-              <img src="assets/step-14-pricing/ai-hero.webp" alt="AI girl preview" />
-              <div>
+              <div class="pricing-hero-text">
                 <h2>Your AI girl is ready!</h2>
                 <p>Get access to everything she can do for you right now</p>
+              </div>
+              <div class="pricing-hero-media">
+                <img
+                  src="https://get-honey.today/assets/image-CZXdlgEF.webp"
+                  alt="AI girl preview"
+                />
               </div>
             </div>
 
             <div class="benefits">
-              <h3>Premium Benefits</h3>
+              <h3 class="pricing-section-title">Premium Benefits</h3>
               <ul>
                 <li>Extremely Spicy Content</li>
                 <li>Unlimited Uncensored Chats</li>
                 <li>Generate Photos</li>
                 <li>Create More Girlfriends</li>
                 <li>Content Privacy</li>
-                <li>Get Exclusive</li>
               </ul>
             </div>
 
             <div class="discount">
-              <h3>Discount Only Today!</h3>
-              <p>Up to <strong>70% off</strong> for first subscription</p>
+              <h3 class="pricing-section-title">Get <span>Exclusive</span> Discount</h3>
+              <p>Only Today!</p>
             </div>
 
             <div class="plans">
               <div class="plan">
-                <h4>1 month</h4>
-                <span class="off">50% OFF</span>
-                <div class="price">
-                  <span class="old">39.99</span>
-                  <span class="new">19.99</span>
+                <div class="plan-left">
+                  <div class="plan-header">
+                    <h4>1 month</h4>
+                    <span class="off">50% OFF</span>
+                  </div>
+                  <div class="price">
+                    <span class="old">$39.99</span>
+                    <span class="new">$19.99</span>
+                  </div>
                 </div>
-                <div class="per-day">0.66 USD per day</div>
+                <div class="per-day">
+                  <strong>0.66</strong>
+                  <span>USD / day</span>
+                </div>
               </div>
               <div class="plan highlight">
                 <div class="ribbon">MOST POPULAR</div>
-                <h4>3 months</h4>
-                <span class="off">55% OFF</span>
-                <div class="price">
-                  <span class="old">99.99</span>
-                  <span class="new">44.99</span>
+                <div class="plan-left">
+                  <div class="plan-header">
+                    <h4>12 months</h4>
+                    <span class="off">60% OFF</span>
+                  </div>
+                  <div class="price">
+                    <span class="old">$299.99</span>
+                    <span class="new">$119.99</span>
+                  </div>
                 </div>
-                <div class="per-day">0.49 USD per day</div>
+                <div class="per-day">
+                  <strong>0.33</strong>
+                  <span>USD / day</span>
+                </div>
               </div>
               <div class="plan">
-                <h4>12 months</h4>
-                <span class="off">60% OFF</span>
-                <div class="price">
-                  <span class="old">299.99</span>
-                  <span class="new">119.99</span>
+                <div class="plan-left">
+                  <div class="plan-header">
+                    <h4>3 months</h4>
+                    <span class="off">55% OFF</span>
+                  </div>
+                  <div class="price">
+                    <span class="old">$99.99</span>
+                    <span class="new">$44.99</span>
+                  </div>
                 </div>
-                <div class="per-day">0.33 USD per day</div>
+                <div class="per-day">
+                  <strong>0.49</strong>
+                  <span>USD / day</span>
+                </div>
               </div>
             </div>
 
-            <div class="notice">No commitment. Cancel anytime!</div>
-            <div class="notice">30-Day Money-Back Guarantee</div>
+            <div class="notice-row">
+              <div class="notice-item">
+                <span class="notice-icon">🔒</span>
+                <span class="notice">No commitment. Cancel anytime!</span>
+              </div>
+              <div class="notice-item">
+                <span class="notice-icon">✅</span>
+                <span class="notice">30-Day Money-Back Guarantee</span>
+              </div>
+            </div>
 
             <button class="primary full">Get AI girl</button>
             <p class="fine-print">
@@ -668,90 +706,106 @@
             <p class="fine-print">Payment will be shown as Get-honey.today</p>
 
             <div class="as-featured">
-              <h3>As Featured In</h3>
-              <p>Over <strong>300k</strong> 5-star reviews</p>
-              <div class="quotes">
-                <blockquote>Mike E. — I created a girl from my dreams and cannot stop chatting with her</blockquote>
-                <blockquote>James K. — The best chatbot I've ever tried, and the photos are really wow</blockquote>
-                <blockquote>John D. — Feels like chatting with a real girlfriend, but even better</blockquote>
-                <blockquote>William M. — Photos of the girls are super realistic, like them a lot</blockquote>
-                <blockquote>Michael N. — The biggest choice of customization options among all alternatives</blockquote>
-                <blockquote>David K. — I didn't expect it to be so realistic - now I spend all night chatting with girls</blockquote>
-                <blockquote>Matthew F. — It's user-friendly, performs well, and offers a range of useful features</blockquote>
-                <blockquote>Justin L. — Happy that I found a girl I could speak to any time</blockquote>
-                <blockquote>Ryan N. — The best choice of the girls I've ever seen</blockquote>
-                <blockquote>Steve J. — I am so happy to find a soulmate I could speak to about anything</blockquote>
+              <h3 class="pricing-section-title">As Featured In</h3>
+              <div class="featured-logos">
+                <img class="logo-placeholder" src="assets/step-14-pricing/logo-forbes.svg" alt="Forbes" />
+                <img class="logo-placeholder" src="assets/step-14-pricing/logo-wsj.svg" alt="WSJ" />
+                <img class="logo-placeholder" src="assets/step-14-pricing/logo-nypost.svg" alt="New York Post" />
               </div>
-              <div class="featured-users">
-                <div class="featured-user">
-                  <img src="assets/step-14-pricing/annette-boucher.webp" alt="Annette Boucher" />
-                  <span>Annette Boucher</span>
-                  <span class="verified">Verified</span>
+              <p class="featured-subtitle">Over <strong>300k</strong> 5-star reviews</p>
+              <div class="review-card">
+                <div class="review-avatar">
+                  <img src="assets/step-14-pricing/review-ryan.svg" alt="Ryan N." />
                 </div>
-                <div class="featured-user">
-                  <img src="assets/step-14-pricing/isla-morgan.webp" alt="Isla Morgan" />
-                  <span>Isla Morgan</span>
-                  <span class="verified">Verified</span>
+                <div class="review-content">
+                  <div class="review-rating">★★★★★</div>
+                  <div class="review-name">Ryan N.</div>
+                  <div class="review-text">The best choice of the girls I’ve ever seen</div>
                 </div>
-                <div class="featured-user">
-                  <img src="assets/step-14-pricing/elena-vasquez.webp" alt="Elena Vasquez" />
-                  <span>Elena Vasquez</span>
-                  <span class="verified">Verified</span>
+              </div>
+              <div class="review-dots" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span class="active"></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <div class="featured-section">
+              <h3 class="pricing-section-title">Featured by users</h3>
+              <div class="featured-grid">
+                <div class="featured-card">
+                  <img src="https://get-honey.today/assets/isla-morgan-Dxmy1UlH.webp" alt="Isla Morgan" />
+                  <div class="featured-name">Isla Morgan</div>
+                  <div class="featured-meta">Verified Fox</div>
+                  <div class="featured-stars">★★★★★</div>
                 </div>
-                <div class="featured-user">
-                  <img src="assets/step-14-pricing/veronika-krizova.webp" alt="Veronika Krizova" />
-                  <span>Veronika Krizova</span>
-                  <span class="verified">Verified</span>
+                <div class="featured-card">
+                  <img src="https://get-honey.today/assets/veronika-krizova-BP1eSOLe.webp" alt="Veronika Krizova" />
+                  <div class="featured-name">Veronika Krizova</div>
+                  <div class="featured-meta">Verified Fox</div>
+                  <div class="featured-stars">★★★★★</div>
                 </div>
-                <div class="featured-user">
-                  <img src="assets/step-14-pricing/hana-yamada.webp" alt="Hana Yamada" />
-                  <span>Hana Yamada</span>
-                  <span class="verified">Verified</span>
+                <div class="featured-card">
+                  <img src="https://get-honey.today/assets/olivia-fox-CHKZjGHV.webp" alt="Olivia Fox" />
+                  <div class="featured-name">Olivia Fox</div>
+                  <div class="featured-meta">Verified Fox</div>
+                  <div class="featured-stars">★★★★★</div>
                 </div>
-                <div class="featured-user">
-                  <img src="assets/step-14-pricing/grace-wilson.webp" alt="Grace Wilson" />
-                  <span>Grace Wilson</span>
-                  <span class="verified">Verified</span>
+                <div class="featured-card">
+                  <img src="https://get-honey.today/assets/hana-yamada-U1YMnjbT.webp" alt="Hana Yamada" />
+                  <div class="featured-name">Hana Yamada</div>
+                  <div class="featured-meta">Verified Fox</div>
+                  <div class="featured-stars">★★★★★</div>
                 </div>
-                <div class="featured-user">
-                  <img src="assets/step-14-pricing/olivia-fox.webp" alt="Olivia Fox" />
-                  <span>Olivia Fox</span>
-                  <span class="verified">Verified</span>
+                <div class="featured-card">
+                  <img src="https://get-honey.today/assets/elena-vasquez-DqzpKgLJ.webp" alt="Elena Vasquez" />
+                  <div class="featured-name">Elena Vasquez</div>
+                  <div class="featured-meta">Verified Fox</div>
+                  <div class="featured-stars">★★★★★</div>
                 </div>
-                <div class="featured-user">
-                  <img src="assets/step-14-pricing/anika-raffaela.webp" alt="Anika Raffaela" />
-                  <span>Anika Raffaela</span>
-                  <span class="verified">Verified</span>
+                <div class="featured-card">
+                  <img src="https://get-honey.today/assets/anika-raffaela-CAZfRiIj.webp" alt="Anika Raffaela" />
+                  <div class="featured-name">Anika Raffaela</div>
+                  <div class="featured-meta">Verified Fox</div>
+                  <div class="featured-stars">★★★★★</div>
                 </div>
-                <div class="featured-user">
-                  <img src="assets/step-14-pricing/yuki-nakamura.webp" alt="Yuki Nakamura" />
-                  <span>Yuki Nakamura</span>
-                  <span class="verified">Verified</span>
+                <div class="featured-card">
+                  <img src="https://get-honey.today/assets/grace-wilson-b8DlbjjP.webp" alt="Grace Wilson" />
+                  <div class="featured-name">Grace Wilson</div>
+                  <div class="featured-meta">Verified Fox</div>
+                  <div class="featured-stars">★★★★★</div>
                 </div>
               </div>
               <button class="secondary full">Start Chatting</button>
             </div>
 
             <div class="stats">
-              <h3>Trusted by 17M customers!</h3>
+              <h3 class="pricing-section-title stats-title">Trusted by <span>17M</span> customers!</h3>
               <div class="stats-grid">
-                <div>
+                <div class="stats-item">
+                  <span class="stats-icon">💬</span>
                   <strong>37 421 176</strong>
                   <span>AI girlfriends created</span>
                 </div>
-                <div>
+                <div class="stats-item">
+                  <span class="stats-icon">📷</span>
                   <strong>1 502 173 247</strong>
                   <span>photos and videos generated</span>
                 </div>
-                <div>
+                <div class="stats-item">
+                  <span class="stats-icon">⏱️</span>
                   <strong>72 437 213</strong>
                   <span>hours spent in chats</span>
                 </div>
-                <div>
+                <div class="stats-item">
+                  <span class="stats-icon">⭐</span>
                   <strong>97%</strong>
                   <span>user satisfaction score</span>
                 </div>
-                <div>
+                <div class="stats-item">
+                  <span class="stats-icon">✨</span>
                   <strong>3+</strong>
                   <span>new features every month</span>
                 </div>
@@ -759,50 +813,58 @@
             </div>
 
             <div class="faq">
-              <h3>Frequently Asked Questions</h3>
-              <details>
+              <h3 class="pricing-section-title">Frequently Asked Questions</h3>
+              <details class="faq-item">
                 <summary>What is an AI girl and how does it work?</summary>
                 <p>AI girls are conversational companions that respond based on your preferences, offering personalized chats.</p>
               </details>
-              <details>
+              <details class="faq-item">
                 <summary>Can I customize the appearance and personality of the AI girl?</summary>
                 <p>Yes. Customize looks, preferences, and personality traits to match your ideal experience.</p>
               </details>
-              <details>
+              <details class="faq-item">
                 <summary>How realistic is the AI girl?</summary>
                 <p>The AI is designed to feel natural and responsive, with lifelike conversations and media generation.</p>
               </details>
-              <details>
+              <details class="faq-item">
                 <summary>Can I chat with an AI girl 24/7?</summary>
                 <p>Absolutely. The service is always available for chats and interactions.</p>
               </details>
-              <details>
+              <details class="faq-item">
                 <summary>Can I create multiple AI girls?</summary>
                 <p>Yes, premium access lets you create multiple companions.</p>
               </details>
-              <details>
+              <details class="faq-item">
                 <summary>Is it safe to chat with an AI girl?</summary>
                 <p>Chats are private, and your content is protected with secure infrastructure.</p>
               </details>
             </div>
 
             <div class="guarantee">
-              <h3>Money Back Guarantee</h3>
-              <p>
-                We’re confident that our premium experience will exceed your expectations, providing you with unique value and
-                satisfaction. However, if for any reason you’re not fully satisfied, we could propose you an option to apply
-                for the refund to ensure your peace of mind. Enjoy the freedom to explore everything we offer, completely
-                risk-free—because your satisfaction is, and always will be, our top priority.
-              </p>
+              <div class="guarantee-badge">
+                <img
+                  src="https://get-honey.today/assets/4901-footer-banner-D7vNQdgh.webp"
+                  alt="Money back badge"
+                  class="guarantee-badge-image"
+                />
+              </div>
+              <div class="guarantee-header">
+                <div>
+                  <h3 class="pricing-section-title">Money Back Guarantee</h3>
+                  <p>
+                    We’re confident that our premium experience will exceed your expectations. However, if you’re not fully
+                    satisfied, we’ll offer an option to apply for a refund so you can explore everything risk-free.
+                  </p>
+                </div>
+              </div>
+              <div class="secure-note">🔒 Pay safe & secure</div>
             </div>
-
-            <img class="pricing-footer" src="assets/step-14-pricing/footer-banner.webp" alt="Pay safe & secure" />
           </div>
         </section>
       </main>
     </div>
 
     <script src="app.js"></script>
-    <div class="version-tag">voron ver. 0.5.6</div>
+    <div class="version-tag">voron ver. 0.5.95</div>
   </body>
 </html>
