@@ -1131,6 +1131,10 @@ blockquote {
   display: block;
 }
 
+.guarantee-badge svg {
+  display: none;
+}
+
 .secure-note {
   margin-top: 12px;
   font-weight: 600;
