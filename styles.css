@@ -370,11 +370,13 @@ input[type="range"]::-moz-range-thumb {
 .slider:hover input[type="range"]::-webkit-slider-thumb {
   transform: scale(1.3);
   box-shadow: 0 0 0 13px rgba(255, 159, 10, 0.13);
+  border-radius: 50%;
 }
 
 .slider:hover input[type="range"]::-moz-range-thumb {
   transform: scale(1.3);
   box-shadow: 0 0 0 13px rgba(255, 159, 10, 0.13);
+  border-radius: 50%;
 }
 
 .slider-row {
