@@ -109,9 +109,10 @@ function showStep(index) {
     step.classList.toggle('active', idx === index);
   });
   currentStep = index;
-  const showTopbar = index === steps.length - 1;
+  const showTopbar = index > 0;
+  const resultsMode = index === steps.length - 1;
   document.body.classList.toggle('show-topbar', showTopbar);
-  document.body.classList.toggle('results-mode', showTopbar);
+  document.body.classList.toggle('results-mode', resultsMode);
   updateUrlForStep(index);
   updateProgressTrack(index);
   updateContinueState(index);
