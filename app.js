@@ -28,7 +28,7 @@ const state = {
   butt: null,
   hair: null,
   preferences: [],
-  lookingFor: null,
+  lookingFor: [],
   libido: 50,
   kink: 50,
   nudity: 50,
@@ -74,7 +74,7 @@ const reviewSlides = [
   },
 ];
 
-const multiSteps = new Set([6, 10, 11]);
+const multiSteps = new Set([6, 8, 10, 11]);
 const autoAdvanceSteps = new Set([0, 1, 2, 3, 4, 5]);
 const analysisSteps = new Set([12]);
 const selectionRequiredSteps = new Set([6, 8, 10, 11]);
@@ -86,7 +86,6 @@ const selectionsMap = {
   3: 'breast',
   4: 'butt',
   5: 'hair',
-  8: 'lookingFor',
 };
 
 function updateUrlForStep(index) {
@@ -109,6 +108,8 @@ function showStep(index) {
     step.classList.toggle('active', idx === index);
   });
   currentStep = index;
+  const showTopbar = index === steps.length - 1;
+  document.body.classList.toggle('show-topbar', showTopbar);
   updateUrlForStep(index);
   updateProgressTrack(index);
   updateContinueState(index);
@@ -147,7 +148,14 @@ function handleOptionClick(option, stepIndex) {
 
   if (multiSteps.has(stepIndex)) {
     option.classList.toggle('selected');
-    const collectionKey = stepIndex === 6 ? 'preferences' : stepIndex === 10 ? 'willing' : 'scenarios';
+    const collectionKey =
+      stepIndex === 6
+        ? 'preferences'
+        : stepIndex === 8
+          ? 'lookingFor'
+          : stepIndex === 10
+            ? 'willing'
+            : 'scenarios';
     const list = state[collectionKey];
     if (option.classList.contains('selected')) {
       if (!list.includes(value)) list.push(value);
@@ -318,7 +326,7 @@ function updateContinueState(stepIndex) {
   if (stepIndex === 6) {
     hasSelection = state.preferences.length > 0;
   } else if (stepIndex === 8) {
-    hasSelection = Boolean(state.lookingFor);
+    hasSelection = state.lookingFor.length > 0;
   } else if (stepIndex === 10) {
     hasSelection = state.willing.length > 0;
   } else if (stepIndex === 11) {
@@ -365,7 +373,7 @@ function updateSummary() {
     `${state.butt || 'Small'} butt`,
     state.hair || 'Blonde',
     ...joinList('preferences', ['No makeup']),
-    state.lookingFor || 'Romantic roleplay',
+    ...joinList('lookingFor', ['Romantic roleplay']),
     ...joinList('willing', ['Backdoor action']),
     ...joinList('scenarios', ['Doctor & Patient']),
   ].filter(Boolean);
