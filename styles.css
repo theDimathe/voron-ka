@@ -1312,6 +1312,8 @@ blockquote {
 
 .stats-laurel-left {
   justify-self: end;
+  transform: scaleX(-1);
+  
 }
 
 .stats-laurel-right {
@@ -1321,7 +1323,7 @@ blockquote {
 .stats-title {
   text-align: center;
   font-size: 1.6rem;
-  margin: 0;
+  margin: 20px;
   color: #fff;
 }
 
