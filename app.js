@@ -51,27 +51,27 @@ const reviewSlides = [
   {
     name: 'Nikita V.',
     text: 'The replies feel so real that I never want the chat to end.',
-    avatar: 'assets/step-14-pricing/yuki-nakamura.svg',
+    avatar: 'assets/step-14-pricing/yuki-nakamura.jpg',
   },
   {
     name: 'Daria K.',
     text: 'Scenario customization is super easy, and every chat feels fresh.',
-    avatar: 'assets/step-14-pricing/annette-boucher.svg',
+    avatar: 'assets/step-14-pricing/annette-boucher.jpeg',
   },
   {
     name: 'Alex P.',
     text: 'The personalization is the best I have tried in a long time.',
-    avatar: 'assets/step-14-pricing/grace-wilson.svg',
+    avatar: 'assets/step-14-pricing/grace-wilson.jpeg',
   },
   {
     name: 'Kirill M.',
     text: 'The conversation quality is impressive and feels natural.',
-    avatar: 'assets/step-14-pricing/veronika-krizova.svg',
+    avatar: 'assets/step-14-pricing/veronika-krizova.jpeg',
   },
   {
     name: 'Sofia R.',
     text: 'Support and privacy are top-notch, which makes me feel at ease.',
-    avatar: 'assets/step-14-pricing/isla-morgan.svg',
+    avatar: 'assets/step-14-pricing/isla-morgan.jpeg',
   },
 ];
 
