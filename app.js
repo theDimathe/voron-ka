@@ -46,6 +46,34 @@ const ethnicityVideos = {
   Black: 'https://get-honey.today/assets/black-BBZyLNic.mp4',
 };
 
+const reviewSlides = [
+  {
+    name: 'Nikita V.',
+    text: 'Ответы настолько живые, что диалог не хочется заканчивать.',
+    avatar: 'assets/step-14-pricing/yuki-nakamura.svg',
+  },
+  {
+    name: 'Daria K.',
+    text: 'Очень удобно настраивать сценарии — каждый чат будто новый.',
+    avatar: 'assets/step-14-pricing/annette-boucher.svg',
+  },
+  {
+    name: 'Alex P.',
+    text: 'Лучший опыт персонализации, который я пробовал за последнее время.',
+    avatar: 'assets/step-14-pricing/grace-wilson.svg',
+  },
+  {
+    name: 'Kirill M.',
+    text: 'Качество диалогов впечатляет, всё выглядит естественно.',
+    avatar: 'assets/step-14-pricing/veronika-krizova.svg',
+  },
+  {
+    name: 'Sofia R.',
+    text: 'Поддержка и приватность на высоте, чувствую себя спокойно.',
+    avatar: 'assets/step-14-pricing/isla-morgan.svg',
+  },
+];
+
 const multiSteps = new Set([6, 10, 11]);
 const autoAdvanceSteps = new Set([0, 1, 2, 3, 4, 5]);
 const analysisSteps = new Set([12]);
@@ -412,6 +440,47 @@ function startTimer() {
   }, 1000);
 }
 
+function initReviewSlider() {
+  const slider = document.querySelector('[data-review-slider]');
+  const dots = document.querySelector('[data-review-dots]');
+  if (!slider || !dots || reviewSlides.length === 0) return;
+
+  slider.innerHTML = '';
+  dots.innerHTML = '';
+
+  reviewSlides.forEach((review, index) => {
+    const card = document.createElement('div');
+    card.className = `review-card${index === 0 ? ' active' : ''}`;
+    card.innerHTML = `
+      <div class="review-avatar">
+        <img src="${review.avatar}" alt="${review.name}" />
+      </div>
+      <div class="review-content">
+        <div class="review-rating">★★★★★</div>
+        <div class="review-name">${review.name}</div>
+        <div class="review-text">${review.text}</div>
+      </div>
+    `;
+    slider.appendChild(card);
+
+    const dot = document.createElement('span');
+    if (index === 0) dot.classList.add('active');
+    dots.appendChild(dot);
+  });
+
+  const cards = Array.from(slider.querySelectorAll('.review-card'));
+  const dotItems = Array.from(dots.querySelectorAll('span'));
+  let activeIndex = 0;
+
+  setInterval(() => {
+    cards[activeIndex].classList.remove('active');
+    dotItems[activeIndex].classList.remove('active');
+    activeIndex = (activeIndex + 1) % cards.length;
+    cards[activeIndex].classList.add('active');
+    dotItems[activeIndex].classList.add('active');
+  }, 3000);
+}
+
 bindOptionClicks();
 bindContinueButtons();
 bindBackButton();
@@ -419,3 +488,4 @@ bindSliders();
 startTimer();
 initProgressTrack();
 showStep(getStepFromUrl());
+initReviewSlider();

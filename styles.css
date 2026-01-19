@@ -942,10 +942,18 @@ input[type="range"] {
   padding: 14px;
   border-radius: 14px;
   background: rgba(0, 0, 0, 0.4);
-  display: flex;
+  display: none;
   gap: 12px;
   align-items: center;
   text-align: left;
+}
+
+.review-card.active {
+  display: flex;
+}
+
+.review-slider {
+  display: grid;
 }
 
 .review-avatar {
