@@ -49,27 +49,27 @@ const ethnicityVideos = {
 const reviewSlides = [
   {
     name: 'Nikita V.',
-    text: 'Ответы настолько живые, что диалог не хочется заканчивать.',
+    text: 'The replies feel so real that I never want the chat to end.',
     avatar: 'assets/step-14-pricing/yuki-nakamura.svg',
   },
   {
     name: 'Daria K.',
-    text: 'Очень удобно настраивать сценарии — каждый чат будто новый.',
+    text: 'Scenario customization is super easy, and every chat feels fresh.',
     avatar: 'assets/step-14-pricing/annette-boucher.svg',
   },
   {
     name: 'Alex P.',
-    text: 'Лучший опыт персонализации, который я пробовал за последнее время.',
+    text: 'The personalization is the best I have tried in a long time.',
     avatar: 'assets/step-14-pricing/grace-wilson.svg',
   },
   {
     name: 'Kirill M.',
-    text: 'Качество диалогов впечатляет, всё выглядит естественно.',
+    text: 'The conversation quality is impressive and feels natural.',
     avatar: 'assets/step-14-pricing/veronika-krizova.svg',
   },
   {
     name: 'Sofia R.',
-    text: 'Поддержка и приватность на высоте, чувствую себя спокойно.',
+    text: 'Support and privacy are top-notch, which makes me feel at ease.',
     avatar: 'assets/step-14-pricing/isla-morgan.svg',
   },
 ];
