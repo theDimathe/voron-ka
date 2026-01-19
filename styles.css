@@ -1448,6 +1448,7 @@ blockquote {
   letter-spacing: 0.02em;
   color: rgba(255, 255, 255, 0.75);
   z-index: 10;
+  display: none;
 }
 
 @media (max-width: 720px) {
