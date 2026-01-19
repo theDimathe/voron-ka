@@ -1,6 +1,7 @@
 const steps = Array.from(document.querySelectorAll('.step'));
 let currentStep = 0;
 let summaryLoaderTimeout;
+const paypageUrl = 'paypage.html';
 
 const stepSlugs = [
   'ethnicity',
@@ -110,6 +111,7 @@ function showStep(index) {
   currentStep = index;
   const showTopbar = index === steps.length - 1;
   document.body.classList.toggle('show-topbar', showTopbar);
+  document.body.classList.toggle('results-mode', showTopbar);
   updateUrlForStep(index);
   updateProgressTrack(index);
   updateContinueState(index);
@@ -503,3 +505,14 @@ startTimer();
 initProgressTrack();
 showStep(getStepFromUrl());
 initReviewSlider();
+
+document.addEventListener('click', (event) => {
+  const button = event.target.closest('button');
+  if (!button) return;
+  if (currentStep !== steps.length - 1) return;
+  const resultsStep = steps[steps.length - 1];
+  const topbar = document.querySelector('.topbar');
+  if (!resultsStep?.contains(button) && !topbar?.contains(button)) return;
+  event.preventDefault();
+  window.location.href = paypageUrl;
+});
