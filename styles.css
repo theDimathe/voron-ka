@@ -44,7 +44,7 @@ body {
   top: 0;
   z-index: 15;
   background: rgba(11, 11, 15, 0.96);
-  padding: 16px 0;
+  padding: 16px 35px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(6px);
 }
@@ -123,7 +123,7 @@ body {
   background: rgba(11, 11, 15, 0.7);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 24px;
-  padding: 18px 14px;
+  padding: 18px 26px;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
 }
 
