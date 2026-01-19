@@ -49,6 +49,20 @@ body {
   backdrop-filter: blur(6px);
 }
 
+.progress-only .topbar {
+  justify-content: flex-start;
+  padding: 12px 35px 16px;
+}
+
+.progress-only .badge,
+.progress-only .topbar-actions {
+  display: none;
+}
+
+.progress-only .progress-row {
+  margin-top: 0;
+}
+
 .progress-row {
   width: 100%;
   display: grid;
