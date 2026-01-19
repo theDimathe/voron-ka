@@ -75,12 +75,13 @@ body {
 .logo {
   font-weight: 700;
   letter-spacing: 0.03em;
+  color: #ffffff;
 }
 
-.logo img {
+.logo svg {
   display: block;
-  height: 32px;
-  width: auto;
+  width: 40px;
+  height: 40px;
 }
 
 .status {
@@ -698,6 +699,13 @@ input[type="range"] {
   flex-direction: column;
   gap: 36px;
   text-align: center;
+  align-items: center;
+}
+
+.pricing > * {
+  width: min(720px, 100%);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .pricing-hero {
@@ -1019,18 +1027,31 @@ input[type="range"] {
   padding: 14px;
   border-radius: 14px;
   background: rgba(0, 0, 0, 0.4);
-  display: none;
+  display: flex;
   gap: 12px;
   align-items: center;
   text-align: left;
+  flex: 0 0 100%;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: transform 0.45s ease, opacity 0.45s ease;
 }
 
 .review-card.active {
-  display: flex;
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .review-slider {
-  display: grid;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+}
+
+.review-track {
+  display: flex;
+  align-items: stretch;
+  transition: transform 0.5s ease;
 }
 
 .review-avatar {
