@@ -513,6 +513,14 @@ input[type="range"] {
   text-align: center;
 }
 
+.analysis-modal-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border: none;
+}
+
 .analysis-modal-actions {
   display: grid;
   gap: 12px;
