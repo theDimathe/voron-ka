@@ -32,6 +32,12 @@ body {
   padding: 12px 0 16px;
 }
 
+.topbar-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .show-topbar .topbar {
   display: flex;
   position: sticky;
