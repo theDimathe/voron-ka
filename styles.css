@@ -915,6 +915,7 @@ input[type="range"] {
     0 0 18px rgba(255, 198, 103, 0.35),
     0 0 36px rgba(255, 198, 103, 0.45);
   background: rgba(255, 198, 103, 0.08);
+  border: 5px solid var(--accent);
 }
 
 .ribbon {
