@@ -74,6 +74,14 @@ h2 {
   font-size: 1.6rem;
 }
 
+.analysis-modal-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border: none;
+}
+
 .subtitle {
   color: rgba(255, 255, 255, 0.7);
   margin-top: -8px;

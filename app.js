@@ -221,17 +221,33 @@ function runAnalysisFlow(stepIndex) {
   const values = step.querySelectorAll('.progress-value');
   const modal = document.getElementById('analysisModal');
   const modalText = document.getElementById('analysisModalText');
+  const modalImage = document.getElementById('analysisModalImage');
   const modalButtons = modal?.querySelectorAll('[data-modal-answer]') ?? [];
 
-  if (!modal || !modalText) return;
+  if (!modal || !modalText || !modalImage) return;
 
   bars.forEach((bar) => (bar.style.width = '0%'));
   values.forEach((value) => (value.textContent = '0%'));
 
   const questions = [
-    { key: 'spicyPhotos', text: 'Would you like to receive spicy photos?' },
-    { key: 'voiceMessages', text: 'Would you like to receive voice messages?' },
-    { key: 'specialVideos', text: 'Would you like to receive special videos?' },
+    {
+      key: 'spicyPhotos',
+      text: 'Would you like to receive spicy photos?',
+      image: 'assets/m_01.webp',
+      alt: 'Spicy photos',
+    },
+    {
+      key: 'voiceMessages',
+      text: 'Would you like to receive voice messages?',
+      image: 'assets/m_02.webp',
+      alt: 'Voice messages',
+    },
+    {
+      key: 'specialVideos',
+      text: 'Would you like to receive special videos?',
+      image: 'assets/m_03.webp',
+      alt: 'Special videos',
+    },
   ];
 
   let stage = 0;
@@ -240,6 +256,8 @@ function runAnalysisFlow(stepIndex) {
 
   const showModal = (index) => {
     modalText.textContent = questions[index].text;
+    modalImage.src = questions[index].image;
+    modalImage.alt = questions[index].alt;
     modal.classList.add('show');
     modal.setAttribute('aria-hidden', 'false');
     paused = true;
