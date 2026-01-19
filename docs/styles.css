@@ -438,6 +438,76 @@ blockquote {
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
 }
 
+.stats-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+  color: var(--accent);
+}
+
+.stats-heading-content {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+}
+
+.stats-stars {
+  display: inline-flex;
+  color: var(--accent);
+}
+
+.stats-stars svg {
+  display: block;
+  width: 143px;
+  height: auto;
+}
+
+.stats-laurel {
+  display: inline-flex;
+  color: var(--accent);
+}
+
+.stats-laurel svg {
+  display: block;
+  width: 54px;
+  height: auto;
+}
+
+.stats-laurel-left {
+  justify-self: end;
+}
+
+.stats-laurel-right {
+  justify-self: start;
+}
+
+.stats-title {
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 0;
+  color: #fff;
+}
+
+.stats-title span {
+  color: var(--accent);
+}
+
+@media (max-width: 640px) {
+  .stats-heading {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-laurel {
+    display: none;
+  }
+
+  .stats-stars svg {
+    width: 120px;
+  }
+}
+
 .stats-grid strong {
   display: block;
   font-size: 1.1rem;
