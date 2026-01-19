@@ -456,6 +456,9 @@ function initReviewSlider() {
   slider.innerHTML = '';
   dots.innerHTML = '';
 
+  const track = document.createElement('div');
+  track.className = 'review-track';
+
   reviewSlides.forEach((review, index) => {
     const card = document.createElement('div');
     card.className = `review-card${index === 0 ? ' active' : ''}`;
@@ -469,16 +472,18 @@ function initReviewSlider() {
         <div class="review-text">${review.text}</div>
       </div>
     `;
-    slider.appendChild(card);
+    track.appendChild(card);
 
     const dot = document.createElement('span');
     if (index === 0) dot.classList.add('active');
     dots.appendChild(dot);
   });
 
-  const cards = Array.from(slider.querySelectorAll('.review-card'));
+  slider.appendChild(track);
+  const cards = Array.from(track.querySelectorAll('.review-card'));
   const dotItems = Array.from(dots.querySelectorAll('span'));
   let activeIndex = 0;
+  track.style.transform = 'translateX(0%)';
 
   setInterval(() => {
     cards[activeIndex].classList.remove('active');
@@ -486,6 +491,7 @@ function initReviewSlider() {
     activeIndex = (activeIndex + 1) % cards.length;
     cards[activeIndex].classList.add('active');
     dotItems[activeIndex].classList.add('active');
+    track.style.transform = `translateX(-${activeIndex * 100}%)`;
   }, 3000);
 }
 
