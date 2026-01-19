@@ -91,7 +91,7 @@ body {
 }
 
 .status {
-  padding: 6px 12px;
+  padding: 11px 16px;
   border-radius: 999px;
   background: var(--accent);
   color: #0b0b0f;
@@ -814,7 +814,7 @@ input[type="range"] {
 }
 
 .badge-icon {
-  font-size: 0.9rem;
+  font-size: 1.3rem;
 }
 
 .timer {
