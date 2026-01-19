@@ -18,18 +18,27 @@ body {
 }
 
 .page {
-  width: clamp(360px, 92vw, 720px);
+  width: min(960px, 100%);
   margin: 0 auto;
-  padding: 20px;
+  padding: 12px;
 }
 
 .topbar {
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
   padding: 12px 0 16px;
+}
+
+.show-topbar .topbar {
+  display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 15;
+  background: #0b0b0f;
+  padding: 16px 0;
 }
 
 .progress-row {
@@ -105,14 +114,15 @@ body {
   background: rgba(11, 11, 15, 0.7);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 24px;
-  padding: 32px;
+  padding: 24px 20px;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
 }
 
 .step {
   display: none;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
+  text-align: center;
 }
 
 .step.active {
@@ -121,18 +131,18 @@ body {
 
 .hero {
   background: linear-gradient(120deg, rgba(255, 118, 248, 0.18), rgba(133, 160, 255, 0.12));
-  padding: 24px;
+  padding: 20px;
   border-radius: 20px;
 }
 
 h1 {
-  margin: 0 0 12px;
-  font-size: 2rem;
+  margin: 0 0 8px;
+  font-size: 2.1rem;
 }
 
 h2 {
   margin: 0;
-  font-size: 1.6rem;
+  font-size: 1.7rem;
 }
 
 .subtitle {
@@ -140,9 +150,14 @@ h2 {
   margin-top: -8px;
 }
 
+.hero p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+
 .options {
   display: grid;
-  gap: 12px;
+  gap: 10px;
 }
 
 .options.grid {
@@ -165,14 +180,14 @@ h2 {
   border: 2px solid rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.03);
   color: inherit;
-  font-size: 1rem;
-  padding: 16px;
+  font-size: 1.05rem;
+  padding: 12px;
   border-radius: 16px;
   cursor: pointer;
   transition: all 0.2s ease;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
   align-items: center;
   text-align: center;
 }
@@ -186,10 +201,14 @@ h2 {
   background: rgba(255, 159, 10, 0.18);
 }
 
+.option.has-media {
+  padding: 8px;
+}
+
 .option-media {
   width: 100%;
-  aspect-ratio: 180 / 280;
-  border-radius: 12px 12px 0 0;
+  aspect-ratio: 3 / 4;
+  border-radius: 14px;
   overflow: hidden;
   background: transparent;
   display: flex;
@@ -270,8 +289,8 @@ h2 {
 
 .list-option {
   flex-direction: row;
-  justify-content: space-between;
-  text-align: left;
+  justify-content: center;
+  text-align: center;
   gap: 12px;
 }
 
@@ -279,8 +298,17 @@ h2 {
   font-size: 1.2rem;
 }
 
+.list-option span {
+  text-align: center;
+}
+
 .list-option.multi-option {
   padding-right: 20px;
+}
+
+.list-option.multi-option span:first-child {
+  flex: 1;
+  text-align: center;
 }
 
 .primary,
@@ -338,7 +366,7 @@ h2 {
 }
 
 .intro-image {
-  width: 220px;
+  width: 260px;
   max-width: 100%;
   border-radius: 18px;
   border: 2px solid rgba(255, 255, 255, 0.08);
@@ -565,6 +593,7 @@ input[type="range"] {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  justify-content: center;
 }
 
 .summary-tag {
@@ -631,9 +660,11 @@ input[type="range"] {
   padding: 12px;
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(255, 255, 255, 0.04);
   text-align: center;
   font-weight: 600;
+  cursor: default;
+  pointer-events: none;
 }
 
 .plan:hover,
@@ -693,6 +724,34 @@ input[type="range"] {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.featured-in {
+  padding: 18px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: grid;
+  gap: 14px;
+}
+
+.featured-in h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.featured-in-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.featured-in-logos svg {
+  display: block;
+  opacity: 0.7;
 }
 
 .badge {
@@ -1185,7 +1244,7 @@ blockquote {
 
 @media (max-width: 720px) {
   .wizard {
-    padding: 20px;
+    padding: 18px 16px;
   }
 
   .options.grid.three-column {
@@ -1193,10 +1252,10 @@ blockquote {
   }
 
   h1 {
-    font-size: 1.6rem;
+    font-size: 1.75rem;
   }
 
   h2 {
-    font-size: 1.3rem;
+    font-size: 1.45rem;
   }
 }
