@@ -465,9 +465,9 @@ function initReviewSlider() {
     const card = document.createElement('div');
     card.className = `review-card${index === 0 ? ' active' : ''}`;
     card.innerHTML = `
-      <div class="review-avatar">
+      <a class="review-avatar" href="${review.avatar}" target="_blank" rel="noopener noreferrer" aria-label="${review.name} avatar">
         <img src="${review.avatar}" alt="${review.name}" />
-      </div>
+      </a>
       <div class="review-content">
         <div class="review-rating">★★★★★</div>
         <div class="review-name">${review.name}</div>
