@@ -1131,18 +1131,25 @@ input[type="range"] {
 .featured-grid {
   display: grid;
   gap: 16px;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(3, minmax(180px, 1fr));
+  align-items: start;
 }
 
 .featured-card {
-  padding: 16px;
+  position: relative;
+  padding: 0;
   border-radius: 18px;
-  background: linear-gradient(160deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
+  background: #0c0c0c;
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
-  display: grid;
-  gap: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 4px;
   text-align: left;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  margin-top: var(--featured-offset, 0);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -1151,11 +1158,60 @@ input[type="range"] {
   box-shadow: 0 22px 50px rgba(0, 0, 0, 0.45);
 }
 
+.featured-card:nth-child(3n + 2) {
+  --featured-offset: 24px;
+}
+
+.featured-card:nth-child(3n) {
+  --featured-offset: 48px;
+}
+
+@media (max-width: 900px) {
+  .featured-grid {
+    grid-template-columns: repeat(2, minmax(180px, 1fr));
+  }
+
+  .featured-card:nth-child(3n + 2),
+  .featured-card:nth-child(3n) {
+    --featured-offset: 0;
+  }
+
+  .featured-card:nth-child(2n) {
+    --featured-offset: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .featured-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .featured-card:nth-child(2n) {
+    --featured-offset: 0;
+  }
+}
+
 .featured-card img {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  aspect-ratio: 4 / 5;
-  border-radius: 16px;
+  height: 100%;
   object-fit: cover;
+  display: block;
+}
+
+.featured-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.6) 70%, rgba(0, 0, 0, 0.85) 100%);
+  z-index: 1;
+}
+
+.featured-card > :not(img) {
+  position: relative;
+  z-index: 2;
+  padding: 0;
 }
 
 .featured-name {
@@ -1181,6 +1237,7 @@ input[type="range"] {
   color: var(--accent);
   font-size: 0.8rem;
   letter-spacing: 2px;
+  order: -1;
 }
 
 .quotes {
