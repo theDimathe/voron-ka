@@ -349,6 +349,7 @@ h2 {
 .secondary.full {
   align-self: stretch;
   text-align: center;
+  height: 67px;
 }
 
 .secondary {
@@ -731,9 +732,6 @@ input[type="range"] {
 
 .pricing-hero-media {
   border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.02);
-  padding: 12px;
 }
 
 .pricing-hero-media img {
@@ -848,6 +846,7 @@ input[type="range"] {
   display: grid;
   gap: 16px;
   grid-template-columns: 1fr;
+  padding: 0 70px;
 }
 
 .plan {
