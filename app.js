@@ -110,7 +110,7 @@ function showStep(index) {
   });
   currentStep = index;
   const resultsMode = index === steps.length - 1;
-  const showTopbar = true;
+  const showTopbar = index !== 0;
   document.body.classList.toggle('show-topbar', showTopbar);
   document.body.classList.toggle('results-mode', resultsMode);
   document.body.classList.toggle('progress-only', !resultsMode);
