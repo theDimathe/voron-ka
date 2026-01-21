@@ -38,6 +38,7 @@ const state = {
   spicyPhotos: null,
   voiceMessages: null,
   specialVideos: null,
+  imageVariant: null,
 };
 
 const ethnicityVideos = {
@@ -88,6 +89,41 @@ const selectionsMap = {
   4: 'butt',
   5: 'hair',
 };
+
+const ethnicityImageVariants = {
+  Asian: 'as',
+  Latina: 'la',
+  Black: 'bl',
+};
+
+const variantImageTargets = Array.from(document.querySelectorAll('[data-variant-file]'));
+
+function initVariantImages() {
+  variantImageTargets.forEach((image) => {
+    if (!image.dataset.defaultSrc) {
+      image.dataset.defaultSrc = image.getAttribute('src') || '';
+    }
+  });
+}
+
+function getVariantImagePath(fileName, fallback) {
+  if (state.imageVariant && fileName) {
+    return `assets/${state.imageVariant}/${fileName}`;
+  }
+  return fallback;
+}
+
+function applyImageVariant(variant) {
+  state.imageVariant = variant || null;
+  variantImageTargets.forEach((image) => {
+    const fallback = image.dataset.defaultSrc || image.getAttribute('src') || '';
+    const fileName = image.dataset.variantFile;
+    const nextSrc = getVariantImagePath(fileName, fallback);
+    if (nextSrc && image.getAttribute('src') !== nextSrc) {
+      image.setAttribute('src', nextSrc);
+    }
+  });
+}
 
 function updateUrlForStep(index) {
   const slug = stepSlugs[index] ?? `step-${index + 1}`;
@@ -174,6 +210,9 @@ function handleOptionClick(option, stepIndex) {
   if (key) {
     state[key] = value;
   }
+  if (stepIndex === 0) {
+    applyImageVariant(ethnicityImageVariants[value] || null);
+  }
   option.classList.add('selected');
   updateContinueState(stepIndex);
 
@@ -236,18 +275,21 @@ function runAnalysisFlow(stepIndex) {
       key: 'spicyPhotos',
       text: 'Would you like to receive spicy photos?',
       image: 'assets/m_01.webp',
+      file: 'm_01.webp',
       alt: 'Spicy photos',
     },
     {
       key: 'voiceMessages',
       text: 'Would you like to receive voice messages?',
       image: 'assets/m_02.webp',
+      file: 'm_02.webp',
       alt: 'Voice messages',
     },
     {
       key: 'specialVideos',
       text: 'Would you like to receive special videos?',
       image: 'assets/m_03.webp',
+      file: 'm_03.webp',
       alt: 'Special videos',
     },
   ];
@@ -257,9 +299,10 @@ function runAnalysisFlow(stepIndex) {
   let paused = false;
 
   const showModal = (index) => {
-    modalText.textContent = questions[index].text;
-    modalImage.src = questions[index].image;
-    modalImage.alt = questions[index].alt;
+    const question = questions[index];
+    modalText.textContent = question.text;
+    modalImage.src = getVariantImagePath(question.file, question.image);
+    modalImage.alt = question.alt;
     modal.classList.add('show');
     modal.setAttribute('aria-hidden', 'false');
     paused = true;
@@ -525,6 +568,7 @@ startTimer();
 initProgressTrack();
 showStep(getStepFromUrl());
 initReviewSlider();
+initVariantImages();
 
 document.addEventListener('click', (event) => {
   const button = event.target.closest('button');
