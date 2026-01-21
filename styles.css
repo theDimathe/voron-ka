@@ -193,7 +193,7 @@ h2 {
 
 .options.grid.three-column {
   grid-template-columns: repeat(3, minmax(0, 1fr));
-          margin: 0 80px;
+          margin: 0 0; 
 }
 
 .options.grid.list {
