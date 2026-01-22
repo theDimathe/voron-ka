@@ -549,7 +549,7 @@ input[type="range"] {
   height: auto;
   max-height: clamp(220px, 45vh, 360px);
   display: block;
-  object-fit: cover;
+  object-fit: contain;
   border: none;
 }
 
