@@ -1227,7 +1227,7 @@ input[type="range"] {
 
 @media (max-width: 640px) {
   .featured-grid {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: repeat(2, minmax(180px, 1fr));
   }
 
   .featured-card:nth-child(2n) {
