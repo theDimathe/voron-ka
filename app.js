@@ -153,6 +153,7 @@ function showStep(index) {
   updateUrlForStep(index);
   updateProgressTrack(index);
   updateContinueState(index);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
   if (analysisSteps.has(index)) {
     runAnalysisFlow(index);
   }

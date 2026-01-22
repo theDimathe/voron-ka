@@ -523,7 +523,7 @@ input[type="range"] {
   display: none;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: 24px 20px;
   z-index: 20;
 }
 
@@ -533,19 +533,21 @@ input[type="range"] {
 
 .analysis-modal-card {
   width: min(360px, 90vw);
+  max-height: calc(100vh - 48px);
   background: #141417;
   border-radius: 18px;
   border: 2px solid rgba(255, 159, 10, 0.35);
-  padding: 20px;
+  padding: 18px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
   text-align: center;
 }
 
 .analysis-modal-image {
   width: 100%;
   height: auto;
+  max-height: clamp(220px, 45vh, 360px);
   display: block;
   object-fit: cover;
   border: none;
