@@ -504,14 +504,22 @@ function startTimer() {
   const timer = document.querySelector('[data-timer]');
   if (!timer) return;
 
-  let remaining = 9 * 60 * 60 + 55 * 60 + 1;
-  setInterval(() => {
-    remaining = Math.max(0, remaining - 1);
-    const hours = String(Math.floor(remaining / 3600)).padStart(2, '0');
-    const minutes = String(Math.floor((remaining % 3600) / 60)).padStart(2, '0');
-    const seconds = String(remaining % 60).padStart(2, '0');
-    timer.textContent = `${hours}:${minutes}:${seconds}`;
-  }, 1000);
+  const totalMs = (9 * 60 + 55) * 1000;
+  const endTime = Date.now() + totalMs;
+
+  const updateTimer = () => {
+    const remaining = Math.max(0, endTime - Date.now());
+    const minutes = String(Math.floor(remaining / 60000)).padStart(2, '0');
+    const seconds = String(Math.floor((remaining % 60000) / 1000)).padStart(2, '0');
+    const milliseconds = String(Math.floor(remaining % 1000)).padStart(3, '0');
+    timer.textContent = `${minutes}:${seconds}:${milliseconds}`;
+    if (remaining <= 0) {
+      clearInterval(interval);
+    }
+  };
+
+  updateTimer();
+  const interval = setInterval(updateTimer, 50);
 }
 
 function initReviewSlider() {
