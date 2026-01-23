@@ -46,14 +46,87 @@
       gap: 28px;
     }
 
-    header {
-      text-align: center;
+    .pay-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 22px;
+      background: rgba(18, 18, 20, 0.9);
+      border-radius: 22px;
+      border: 1px solid var(--panel-border);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(10px);
     }
 
-    header h1 {
-      margin: 0;
-      font-size: clamp(28px, 4vw, 38px);
-      letter-spacing: 0.02em;
+    .pay-header-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .pay-logo {
+      display: grid;
+      grid-template-rows: repeat(2, 1fr);
+      place-items: center;
+      width: 44px;
+      height: 52px;
+      font-size: 30px;
+      line-height: 1;
+    }
+
+    .pay-title {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .pay-title span:first-child {
+      font-size: 26px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      text-transform: capitalize;
+    }
+
+    .pay-timer {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+    }
+
+    .pay-cta {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      min-width: 210px;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #f7a300, #ffb12a);
+      color: #14110a;
+      font-size: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      box-shadow: 0 12px 24px rgba(255, 172, 32, 0.3);
+    }
+
+    .pay-cta span {
+      line-height: 1.1;
+    }
+
+    @media (max-width: 560px) {
+      .pay-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .pay-cta {
+        width: 100%;
+      }
     }
 
     .panel {
@@ -342,8 +415,20 @@
 </head>
 <body>
   <main class="page">
-    <header>
-      <h1>Checkout</h1>
+    <header class="pay-header">
+      <div class="pay-header-left">
+        <div class="pay-logo" aria-hidden="true">
+          <span>💎</span>
+        </div>
+        <div class="pay-title">
+          <span>Premium</span>
+          <span class="pay-timer">07:25:01</span>
+        </div>
+      </div>
+      <button class="pay-cta" type="button">
+        <span>Claim</span>
+        <span>discount</span>
+      </button>
     </header>
 
     
