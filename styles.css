@@ -425,7 +425,10 @@ body.results-mode button:not([disabled]):hover {
 }
 
 .intro-image {
-  width: min(320px, 100%);
+    width: clamp(180px, 45vw, 320px);
+    max-height: min(45vh, 420px);
+    height: auto;
+    object-fit: contain;
 
 }
 
