@@ -275,6 +275,11 @@ h2 {
   padding: 6px;
 }
 
+.claim-discount-text {
+text-transform: capitalize;
+    font-size: 1.3rem;
+}
+
 .option-media {
   width: 100%;
   aspect-ratio: 4 / 5;
