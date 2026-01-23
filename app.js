@@ -511,7 +511,7 @@ function startTimer() {
     const remaining = Math.max(0, endTime - Date.now());
     const minutes = String(Math.floor(remaining / 60000)).padStart(2, '0');
     const seconds = String(Math.floor((remaining % 60000) / 1000)).padStart(2, '0');
-    const milliseconds = String(Math.floor(remaining % 1000)).padStart(3, '0');
+    const milliseconds = String(Math.floor(remaining % 1000)).padStart(2, '0');
     timer.textContent = `${minutes}:${seconds}:${milliseconds}`;
     if (remaining <= 0) {
       clearInterval(interval);
