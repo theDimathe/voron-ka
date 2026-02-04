@@ -1115,6 +1115,11 @@ input[type="range"] {
   border-bottom-color: #ffffff;
 }
 
+.plan.is-selected .ribbon {
+background: rgba(255, 198, 103, 0.9);
+}
+
+
 .ribbon {
   position: absolute;
   top: -10px;
