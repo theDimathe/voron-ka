@@ -3,6 +3,33 @@ let currentStep = 0;
 let summaryLoaderTimeout;
 const paypageUrl = 'paypage.html';
 
+//  Y goals 
+const YM_COUNTER_ID = 106180606; 
+const firedSteps = new Set();
+
+function trackStepGoal(index) {
+  if (firedSteps.has(index)) return; // rpt
+  firedSteps.add(index);
+
+  const slug = stepSlugs[index] ?? `step-${index + 1}`;
+  const goalName = `quiz_step_${index}`;
+
+  if (typeof window.ym === 'function') {
+    window.ym(YM_COUNTER_ID, 'reachGoal', goalName, {
+      step_index: index,
+      step_slug: slug
+    });
+  }
+}
+
+
+
+
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
+
 const stepSlugs = [
   'ethnicity',
   'age',
@@ -140,6 +167,8 @@ function getStepFromUrl() {
   return index >= 0 ? index : 0;
 }
 
+
+
 function showStep(index) {
   steps.forEach((step, idx) => {
     step.classList.toggle('active', idx === index);
@@ -153,7 +182,30 @@ function showStep(index) {
   updateUrlForStep(index);
   updateProgressTrack(index);
   updateContinueState(index);
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  trackStepGoal(index); // y goal to step
+
+  // --- Safari scroll fix (replaces smooth scroll) ---
+  const html = document.documentElement;
+  const prevBehavior = html.style.scrollBehavior;
+  html.style.scrollBehavior = 'auto';
+
+  const forceTop = () => {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  };
+
+  // after render/layout
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      forceTop();
+      // extra retry for iOS Safari cases where first call is ignored
+      setTimeout(forceTop, 50);
+      html.style.scrollBehavior = prevBehavior;
+    });
+  });
+  // --- /Safari scroll fix ---
+
   if (analysisSteps.has(index)) {
     runAnalysisFlow(index);
   }
@@ -162,6 +214,7 @@ function showStep(index) {
     startSummaryLoader();
   }
 }
+
 
 function nextStep() {
   if (currentStep < steps.length - 1) {
@@ -587,5 +640,12 @@ document.addEventListener('click', (event) => {
   const topbar = document.querySelector('.topbar');
   if (!resultsStep?.contains(button) && !topbar?.contains(button)) return;
   event.preventDefault();
-  window.location.href = paypageUrl;
+  const targetUrl = new URL(paypageUrl, window.location.href);
+  const currentUrl = new URL(window.location.href);
+  currentUrl.searchParams.forEach((value, key) => {
+    if (!targetUrl.searchParams.has(key)) {
+      targetUrl.searchParams.append(key, value);
+    }
+  });
+  window.location.href = targetUrl.toString();
 });
