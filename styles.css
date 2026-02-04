@@ -1040,7 +1040,6 @@ input[type="range"] {
 }
 
 .plan-choice {
-  position: absolute;
   top: 12px;
   right: 12px;
   width: 22px;
@@ -1054,12 +1053,13 @@ input[type="range"] {
 }
 
 .plan-choice::after {
-  content: "";
-  width: 10px;
-  height: 6px;
-  border-left: 2px solid transparent;
-  border-bottom: 2px solid transparent;
-  transform: rotate(-45deg);
+    content: "";
+    width: 10px;
+    height: 6px;
+    border-left: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    transform: rotate(-45deg) translate(1px, -1px);
+    scale: .8;
 }
 
 .plan-header {
