@@ -1035,6 +1035,7 @@ input[type="range"] {
   align-items: center;
   gap: 12px;
   text-align: left;
+  cursor: pointer;
 }
 
 .plan-header {
@@ -1067,6 +1068,15 @@ input[type="range"] {
     0 0 36px rgba(255, 198, 103, 0.45);
   background: rgba(255, 198, 103, 0.08);
   border: 5px solid var(--accent);
+}
+
+.plan.is-selected {
+  border-color: rgba(255, 198, 103, 0.9);
+  box-shadow:
+    0 0 0 1px rgba(255, 198, 103, 0.45),
+    0 0 18px rgba(255, 198, 103, 0.35),
+    0 0 36px rgba(255, 198, 103, 0.45);
+  background: rgba(255, 198, 103, 0.08);
 }
 
 .ribbon {
@@ -1611,6 +1621,7 @@ blockquote {
 @media (max-width: 720px) {
   .wizard {
     padding: 16px 12px;
+    padding-bottom: 120px;
   }
 
   .options.grid.three-column {
@@ -1623,5 +1634,14 @@ blockquote {
 
   h2 {
     font-size: 1.55rem;
+  }
+
+  .step .primary.full[data-action="continue"] {
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    bottom: max(12px, env(safe-area-inset-bottom));
+    z-index: 20;
+    margin-top: 0;
   }
 }
