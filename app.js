@@ -124,6 +124,8 @@ const ethnicityImageVariants = {
 };
 
 const variantImageTargets = Array.from(document.querySelectorAll('[data-variant-file]'));
+const planOptions = Array.from(document.querySelectorAll('.plan[data-price]'));
+const priceParamName = 'price';
 
 function initVariantImages() {
   variantImageTargets.forEach((image) => {
@@ -157,6 +159,16 @@ function updateUrlForStep(index) {
   const url = new URL(window.location.href);
   url.searchParams.set('quizStep', slug);
   window.history.replaceState({ quizStep: slug }, '', url.toString());
+}
+
+function updateUrlPrice(price) {
+  const url = new URL(window.location.href);
+  if (price) {
+    url.searchParams.set(priceParamName, price);
+  } else {
+    url.searchParams.delete(priceParamName);
+  }
+  window.history.replaceState({ quizStep: stepSlugs[currentStep] }, '', url.toString());
 }
 
 function getStepFromUrl() {
@@ -622,6 +634,37 @@ function initReviewSlider() {
   }, 3000);
 }
 
+function selectPlan(plan) {
+  const price = plan?.dataset?.price;
+  if (!price) return;
+  planOptions.forEach((item) => {
+    item.classList.toggle('is-selected', item === plan);
+  });
+  updateUrlPrice(price);
+}
+
+function bindPlanSelection() {
+  if (!planOptions.length) return;
+  const params = new URLSearchParams(window.location.search);
+  const selectedPrice = params.get(priceParamName);
+  if (selectedPrice) {
+    const matched = planOptions.find((plan) => plan.dataset.price === selectedPrice);
+    if (matched) {
+      selectPlan(matched);
+    }
+  }
+
+  planOptions.forEach((plan) => {
+    plan.addEventListener('click', () => selectPlan(plan));
+    plan.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        selectPlan(plan);
+      }
+    });
+  });
+}
+
 bindOptionClicks();
 bindContinueButtons();
 bindBackButton();
@@ -631,6 +674,7 @@ initProgressTrack();
 showStep(getStepFromUrl());
 initReviewSlider();
 initVariantImages();
+bindPlanSelection();
 
 document.addEventListener('click', (event) => {
   const button = event.target.closest('button');

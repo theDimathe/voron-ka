@@ -1025,16 +1025,41 @@ input[type="range"] {
 }
 
 .plan {
-  padding: 12px 14px;
-  border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.03);
+  padding: 14px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 12px;
   text-align: left;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.plan-choice {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  background: rgba(0, 0, 0, 0.25);
+  display: grid;
+  place-items: center;
+  transition: all 0.2s ease;
+}
+
+.plan-choice::after {
+  content: "";
+  width: 10px;
+  height: 6px;
+  border-left: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  transform: rotate(-45deg);
 }
 
 .plan-header {
@@ -1067,6 +1092,27 @@ input[type="range"] {
     0 0 36px rgba(255, 198, 103, 0.45);
   background: rgba(255, 198, 103, 0.08);
   border: 5px solid var(--accent);
+}
+
+.plan.is-selected {
+  border-color: rgba(117, 217, 255, 0.9);
+  box-shadow:
+    0 0 0 1px rgba(117, 217, 255, 0.55),
+    0 0 18px rgba(117, 217, 255, 0.35),
+    0 0 36px rgba(117, 217, 255, 0.35);
+  background: linear-gradient(145deg, rgba(26, 152, 255, 0.22), rgba(10, 30, 50, 0.2));
+  transform: translateY(-2px);
+}
+
+.plan.is-selected .plan-choice {
+  border-color: rgba(117, 217, 255, 0.9);
+  background: rgba(26, 152, 255, 0.5);
+  box-shadow: 0 0 0 3px rgba(117, 217, 255, 0.2);
+}
+
+.plan.is-selected .plan-choice::after {
+  border-left-color: #ffffff;
+  border-bottom-color: #ffffff;
 }
 
 .ribbon {
@@ -1611,6 +1657,7 @@ blockquote {
 @media (max-width: 720px) {
   .wizard {
     padding: 16px 12px;
+    padding-bottom: 120px;
   }
 
   .options.grid.three-column {
@@ -1623,5 +1670,14 @@ blockquote {
 
   h2 {
     font-size: 1.55rem;
+  }
+
+  .step .primary.full[data-action="continue"] {
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    bottom: max(12px, env(safe-area-inset-bottom));
+    z-index: 20;
+    margin-top: 0;
   }
 }
